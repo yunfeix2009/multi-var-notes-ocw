@@ -14,6 +14,7 @@
       #v(2cm)
       #title("Multivariable Calculus")
       #text(size: 13pt)[Saint Even, Slipper King]
+      
       #text(size: 11pt)[Source: https://github.com/yunfeix2009/multi-var-notes-ocw]
     ]
     outline()
