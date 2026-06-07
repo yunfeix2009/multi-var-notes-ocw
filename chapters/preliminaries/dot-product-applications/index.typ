@@ -11,8 +11,8 @@
 
   ]<ex:dot-product-angle-1>
   #solution[of @ex:dot-product-angle-1][
-    Express in terms of vectors, $va(P R) = va(R) - va(P) = (-1, 0, 2)$ and $va(P Q) = va(Q) - va(P) = (-1, 1, 0)$. Therefore, $theta := angle R P Q$, $va(P R) dot va(P Q) = norm(va(P R)) norm(va(P Q) cos theta)$. Thus,
-    $ theta = cos^-1 (((-1, 0, 2) dot (-1, 1, 0))/(norm((-1, 0, 2)) norm((-1, 1, 0)))) = 1/sqrt(10). $
+    Express in terms of vectors, $va(P R) = va(R) - va(P) = (-1, 0, 2)$ and $va(P Q) = va(Q) - va(P) = (-1, 1, 0)$. Therefore, $theta := angle R P Q$, $va(P R) dot va(P Q) = norm(va(P R)) norm(va(P Q)) cos theta$. Thus,
+    $theta = cos^(-1) (((-1, 0, 2) dot (-1, 1, 0))/(norm((-1, 0, 2)) norm((-1, 1, 0)))) = 1/sqrt(10). #qedhere$
   ]
   #example[
     (Pset 1 Part II p1) Find the dihedral angle between two faces of a regular tetrahedron.
@@ -52,9 +52,44 @@
   #proof[
     Denote the surface as $S$ and the normal vector $vb(n)$. Consider an arbitrary curve $gamma subset S$ that is parametrized by $gamma(t)$ and passes through $(x_0, y_0, z_0)$,  since $vb(n)$ is orthogonal to $gamma$ at $(x_0, y_0, z_0)$, we have $dv(gamma, t) dot vb(n) = 0$. Since $gamma subset S$, for any $t$, $(F compose gamma)(t) = 0$, and thus $F compose gamma$ is constant. Hence, $pdv(F compose gamma, t) =0$. However, $pdv(F compose gamma, t) =$
   ]
-#theorem[
-  The normal vector at a point $(u_0, v_0)$ wrt a surface that is defined by $vb(r) (u, v)$ is $nabla F(u) times nabla F(v)$, where $vb(r)$ is a 3D vector.
-]
+
+  #theorem[
+    The normal vector at a point $(u_0, v_0)$ wrt a surface that is defined by $vb(r) (u, v)$ is $nabla F(u) times nabla F(v)$, where $vb(r)$ is a 3D vector.
+  ]
++ In Physics, when dealing with force, dot product is often critical.
+  #example[
+    Background: By carefully positioning the
+    sail the boat can be made to sail into the wind – this process is called _tacking_.
+
+    Described mathematically, the wind vector is first projected onto the
+    perpendicular to the sail to obtain the direction of the force on the sail.
+    This resultant force is then projected onto the axis of the boat to determine
+    the direction in which the boat is being pushed. By orienting the sail
+    correctly, this double projection can result in a vector with a component
+    pointing into the wind.
+
+    In the figure, $bold(w) = a bold(i)$ is the wind direction. The line $l_s$
+    is perpendicular to the sail $(0 <= alpha < pi/2)$, and the line $l_B$ lies
+    along the boat's axis $(0 <= beta < pi/2)$.
+    #image("/assets/image.png")
+
+    a) Let $bold(w)_1$ be the projection of $bold(w)$ onto the line $l_s$.
+    Show that $bold(w)_1$ does not have a non-zero component in the
+    direction opposite $bold(w)$. (It is sufficient to show the projections
+    on the sketch.)
+
+    b) Find the projection of $bold(w)_1$ onto $l_B$.
+    (Give an explicit formula in terms of $alpha$ and $beta$.) What is the condition on $alpha$ and $beta$ that this projection
+    has a component in the $-bold(i)$ direction?
+    (For warmup you might try the specific case
+    $alpha = pi/3 = beta$.)
+  ]
+  #solution[
+    (a) omitted due to simplicity. 
+    (b) The magnitude is $ norm(a hat(bold(i))) sin alpha sin beta = a sin alpha sin beta, $
+    while the direction is along $l_bold(B).$
+    geometrically, there is a $- hat(bold(i))$ component iff $alpha + beta > 90^compose$
+  ]
 
 
 

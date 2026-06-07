@@ -82,14 +82,14 @@ $
 
   (a) Show that
   $
-    1/4 (norm(vb(u) + vb(v))^2 - norm(vb(u) - vb(v)^2)) = vb(u) dot vb(v).
+    1/4 (norm(vb(u) + vb(v))^2 - norm(vb(u) - vb(v))^2) = vb(u) dot vb(v).
   $
 
   (b) Given two non-zero vectors $vb(u)$ and $vb(v)$, find the unit vector which bisects the smaller angle between them.
 ]
 
 #solution[
-  (a) We proceed by expanding the left side: $ "LHS" = 1/4 ((vb(u)^2 + 2 vb(u) dot vb(v) + vb(v)^2) - (vb(u)^2 - 2 vb(u) vb(v) + vb(v))^2)) = vb(u) dot vb(v).$
+  (a) We proceed by expanding the left side: $ "LHS" = 1/4 ((vb(u)^2 + 2 vb(u) dot vb(v) + vb(v)^2) - (vb(u)^2 - 2 vb(u) dot vb(v) + vb(v)))^2) = vb(u) dot vb(v).$
 
   (b) Define $hat(vb(x)) := vb(x)/norm(vb(x))$. The answer is $(hat(vb(u)) + hat(vb(v)))/norm(hat(vb(u)) + hat(vb(v)))^2$
 ]

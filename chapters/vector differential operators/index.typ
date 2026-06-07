@@ -5,4 +5,4 @@
 
   $ lr({f(x)/2 mid(|) forall r mid(|) forall n}) $
 ]
-#lorem(400)
+#lorem(10)
