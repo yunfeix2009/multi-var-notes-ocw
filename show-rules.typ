@@ -1,11 +1,47 @@
 #import "/lib.typ" : *
+#import "/packages/local/ctheorems/2.0.0/src/thm.typ": thm-qed-show
 #let show-rules(doc) = {
   show: thm-rules.with(qed-symbol: $square$)
-  show math.equation: it => {
-    if it.fields().keys().contains("label") {
-      math.equation(block: true, numbering: scoped-equation-numbering, it)
+  show math.equation: eq => {
+    show metadata.where(value: "thm-qedhere"): tag(thm-qed-show)
+    show metadata: data => {
+      if type(data.value) == dictionary and data.value.keys().contains("eq-tag") {
+        context {
+          let pos-numbering = query(metadata.where(value: "thm-equation-numbering").after(eq.location())).first().location().position()
+          let pos-here = here().position()
+          let width = measure(data.value.eq-tag).width
+          let dx = -pos-here.x + pos-numbering.x - width
+          if data.value.move {
+            move(dx: dx, data.value.eq-tag)
+          } else {
+            place(horizon, dx: dx, data.value.eq-tag)
+          }
+        }
+      } else {
+        data
+      }
+    }
+
+    if eq.fields().keys().contains("label") {
+      math.equation(
+        block: true,
+        numbering: scoped-equation-numbering,
+        number-align: eq.number-align,
+        supplement: eq.supplement,
+        eq.body,
+      )
+    } else if eq.numbering == none {
+      math.equation(
+        block: eq.block,
+        numbering: x => {
+          metadata("thm-equation-numbering")
+        },
+        number-align: eq.number-align,
+        supplement: eq.supplement,
+        eq.body,
+      )
     } else {
-      it
+      eq
     }
   }
 

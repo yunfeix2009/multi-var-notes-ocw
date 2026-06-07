@@ -1,4 +1,4 @@
-#import "/lib.typ" : *
+#import "/lib.typ": *
 #set heading(numbering: "1.1")
 #chapter-section("preliminaries")[
   #include "preliminaries/index.typ"
