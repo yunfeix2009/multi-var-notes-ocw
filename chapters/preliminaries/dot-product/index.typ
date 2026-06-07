@@ -26,10 +26,9 @@ For two given vectors of the same dimension, $vb(a)=(a_1,dots,a_n)$ and $vb(b)=(
 =
 norm(bold(a)) norm(bold(b)) cos theta.
 $
-]
+]<thm:dot-product-geo>
 
 #proof[
-We first consider the two-dimensional case.
 By the Law of Cosines, if $bold(c) = bold(a) - bold(b),$ then
 
 $
@@ -76,4 +75,21 @@ bold(a)$ is orthogonal to $
 bold(b)$
 iff $bold(a) dot bold(b) = 0.
 $
+]
+
+#example[
+  (pset 1 partII p2)   Let $vb(u), vb(b)$ be vectors.
+
+  (a) Show that
+  $
+    1/4 (norm(vb(u) + vb(b))^2 - norm(vb(u) - vb(bb)^2)) = vb(u) dot vb(b).
+  $
+
+  (b) Given two non-zero vectors $vb(u)$ and $vb(b)$, find the unit vector which bisects the smaller angle between them.
+]
+
+#solution[
+  (a) We proceed by expanding the left side: $ "LHS" = 1/4 ((vb(u)^2 + 2 vb(u) dot vb(v) + vb(v)^2) - (vb(u)^2 - 2 vb(u) vb(v) + vb(v))^2)) = vb(u) dot vb(v).$
+
+  (b) Define $hat(vb(x)) := vb(x)/norm(vb(x))$. The answer is $(hat(vb(u)) + hat(vb(v)))/norm(hat(vb(u)) + hat(vb(v)))^2$
 ]
