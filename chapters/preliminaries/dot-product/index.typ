@@ -10,7 +10,7 @@ their *dot product* is defined by
 $bold(a) dot bold(b)
 := sum_(i=1)^n a_i b_i.$
 The dot product is a scalar.
-]
+]<def:dot-product>
 
 #theorem[
 For a fixed vector $vb(a)=(a_1,dots,a_n)$, $norm(bold(a))^2
