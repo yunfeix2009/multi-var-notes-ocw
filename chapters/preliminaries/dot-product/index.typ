@@ -3,9 +3,9 @@
 == Dot Product
 
 #definition[
-For vectors $bold(a) = chevron a_1, a_2, dots, a_n chevron.r$
+For vectors $bold(a) = ( a_1, a_2, dots, a_n )$
 and
-$bold(b) = chevron b_1, b_2, dots, b_n chevron.r,$
+$bold(b) = ( b_1, b_2, dots, b_n )$,
 their *dot product* is defined by
 $bold(a) dot bold(b)
 := sum_(i=1)^n a_i b_i.$
@@ -13,16 +13,16 @@ The dot product is a scalar.
 ]
 
 #theorem[
-$norm(bold(a))^2
+For a fixed vector $vb(a)=(a_1,dots,a_n)$, $norm(bold(a))^2
 =
 bold(a) dot bold(a)
 =
-sum_(i=1)^n a_i^2.
-$
+sum_(i=1)^n a_i^2
+$.
 ]
 
 #theorem[
-$bold(a) dot bold(b)
+For two given vectors of the same dimension, $vb(a)=(a_1,dots,a_n)$ and $vb(b)=(b_1,dots,b_n)$, $bold(a) dot bold(b)
 =
 norm(bold(a)) norm(bold(b)) cos theta.
 $
@@ -71,9 +71,9 @@ $
 ]
 
 #corollary[
-$
+For two given vectors $vb(a) "and" vb(b)$, $
 bold(a)$ is orthogonal to $
 bold(b)$
-if and only if $bold(a) dot bold(b) = 0.
+iff $bold(a) dot bold(b) = 0.
 $
 ]
