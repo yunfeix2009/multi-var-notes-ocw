@@ -78,14 +78,14 @@ $
 ]
 
 #example[
-  (pset 1 partII p2)   Let $vb(u), vb(b)$ be vectors.
+  (pset 1 partII p2)   Let $vb(u), vb(v)$ be vectors.
 
   (a) Show that
   $
-    1/4 (norm(vb(u) + vb(b))^2 - norm(vb(u) - vb(bb)^2)) = vb(u) dot vb(b).
+    1/4 (norm(vb(u) + vb(v))^2 - norm(vb(u) - vb(v)^2)) = vb(u) dot vb(v).
   $
 
-  (b) Given two non-zero vectors $vb(u)$ and $vb(b)$, find the unit vector which bisects the smaller angle between them.
+  (b) Given two non-zero vectors $vb(u)$ and $vb(v)$, find the unit vector which bisects the smaller angle between them.
 ]
 
 #solution[
