@@ -91,5 +91,5 @@ $
 #solution[
   (a) We proceed by expanding the left side: $ "LHS" = 1/4 ((vb(u)^2 + 2 vb(u) dot vb(v) + vb(v)^2) - (vb(u)^2 - 2 vb(u) dot vb(v) + vb(v)))^2) = vb(u) dot vb(v).$
 
-  (b) Define $hat(vb(x)) := vb(x)/norm(vb(x))$. The answer is $(hat(vb(u)) + hat(vb(v)))/norm(hat(vb(u)) + hat(vb(v)))^2$
+  (b) Define $hat(vb(x)) := vb(x)/norm(vb(x))$. The answer is $ (hat(vb(u)) + hat(vb(v)))/norm(hat(vb(u)) + hat(vb(v)))^2 $
 ]
