@@ -40,7 +40,7 @@ With @def:dot-product, we have the means to often conviently express angles and 
   ) $
 ]
 
-Similar to the two dimensional determinants, the three dimension determinants also hold physical significance. In this case, it gives the (signed) volume of the parallelepipide formed by $vb(a), vb(b), "and" vb(c)$.
+Similar to the two dimensional determinants, the three dimension determinants also hold physical significance. In this case, it gives the (signed) volume of the parallelepiped formed by $vb(a), vb(b), "and" vb(c)$.
 
 Now, we are ready to define cross product.
 #definition[
@@ -55,10 +55,10 @@ Now, we are ready to define cross product.
 ]
 
 #theorem[
-  For three 3D vectors $vb(a), vb(b), "and" vb(c)$, $ det (vb(a), vb(b), vb(c)) = vb(a) dot vb(b) times vb(c). $
+  For three 3D vectors $vb(a), vb(b), "and" vb(c)$, $ det (vb(a), vb(b), vb(c)) &= vb(a) dot (vb(b) times vb(c)) \ &=vb(b) dot (vb(c) vb(a)) \ & = vb(c) dot (vb(a) times vb(b)). $
 ]
 #proof[
-  This result comes directly from the expansion of both sides. However, an arugment based on the geometric meaning in terms of the area of the parallelepipide could also be established.
+  This result comes directly from the expansion of both sides. However, an arugment based on the geometric meaning in terms of the area of the parallelepiped could also be established.
 ]
 
 #example[
@@ -90,4 +90,14 @@ Now, we are ready to define cross product.
   Let the normal vector of the x-y plane be $vb(k)$, then  $vb(v) = (vb(n) times vb(k)) times vb(n)$
 
   (b) Notice that the $hat(vb(n)) tilde vb(u) times vb(v)$, so we can directly apply the result from part (a) that $ vb(v) = ((vb(u) times vb(v)) times vb(k)) times (vb(u) times vb(v)). $
+]
+
+
+#example[
+  Fix three 3D dimensional vectors $vb(a), vb(b), vb(c)$. Determine whether another vector $vb(v)$ is on the plane formed by $vb(a), vb(b), "and" vb(c)$. 
+]
+
+#solution[
+  The vector $vb(v)$ is on the plane iff $ vb(v) dot ((vb(a) - vb(b)) times (vb(a) - vb(c))) = 0. $
+  Symmetrically, it could be expressed as $ det mat(vb(p) - vb(a), vb(p) - vb(b), vb(p)- vb(c)) = 0. $
 ]
