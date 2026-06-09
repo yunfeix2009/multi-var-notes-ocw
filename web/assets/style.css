@@ -275,6 +275,27 @@ svg {
   border-left: none;
 }
 
+.global-nav a[data-nav-depth="0"] {
+  padding-left: 1rem;
+}
+
+.global-nav a[data-nav-depth="1"] {
+  padding-left: 2rem;
+}
+
+.global-nav a[data-nav-depth="2"] {
+  padding-left: 3rem;
+}
+
+.global-nav a[data-nav-depth="3"] {
+  padding-left: 4rem;
+}
+
+.global-nav a[data-nav-depth="4"],
+.global-nav a[data-nav-depth="5"] {
+  padding-left: 5rem;
+}
+
 .global-nav .nav-collapse-toggle {
   display: inline-flex;
   align-items: center;
@@ -309,7 +330,6 @@ svg {
 
 .global-nav li.active > .nav-item-row > a {
   color: var(--color-sidebar-active);
-  font-weight: 600;
   background: transparent;
   border-left-color: transparent;
 }
@@ -336,23 +356,25 @@ svg {
   color: var(--color-nav-part);
 }
 
-.global-nav li:not(.nav-sub) > a,
-.global-nav li:not(.nav-sub) > .nav-item-row > a {
+.global-nav li.nav-depth-0 > a,
+.global-nav li.nav-depth-0 > .nav-item-row > a {
   font-weight: 600;
   color: var(--color-text);
 }
 
-.global-nav .nav-children > ul,
-.global-nav .nav-children .nav-children > ul {
-  margin-left: 0.9rem;
-}
-
 .global-nav li.nav-sub a {
-  padding-left: 1rem;
+  font-weight: 400;
   font-size: 0.85em;
+  color: var(--color-text-muted);
 }
 
-.global-nav li.nav-depth-2 a {
+.global-nav li.nav-sub.active > a,
+.global-nav li.nav-sub.active > .nav-item-row > a {
+  font-weight: 400;
+}
+
+.global-nav li.nav-depth-2 a,
+.global-nav li.nav-depth-2 > .nav-item-row > a {
   font-size: 0.8em;
 }
 

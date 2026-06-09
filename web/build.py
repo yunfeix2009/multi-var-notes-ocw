@@ -18,7 +18,7 @@ import shutil
 import subprocess
 import sys
 from pathlib import Path, PurePosixPath
-from typing import Optional
+from typing import Any, Dict, List, Optional, Tuple, cast
 
 try:
     from bs4 import BeautifulSoup, Tag
@@ -229,10 +229,10 @@ def extract_local_toc(section: Tag) -> list[dict]:
 
 def discover_structure(
     soup: BeautifulSoup,
-) -> tuple[list[tuple[str, str, str]], list[tuple[str, str, str, str]], dict[str, int]]:
-    pages: list[tuple[str, str, str]] = []
-    nav_items: list[tuple[str, str, str, str]] = []
-    nav_depths: dict[str, int] = {}
+) -> Tuple[List[Tuple[str, str, str]], List[Dict[str, Any]], Dict[str, int]]:
+    pages: List[Tuple[str, str, str]] = []
+    nav_items: List[Dict[str, Any]] = []
+    nav_depths: Dict[str, int] = {}
 
     for section in soup.find_all("section", class_="chapter"):
         sid = section.get("id", "")
@@ -258,23 +258,94 @@ def discover_structure(
 
         filename = section_filename(sid)
         pages.append((sid, filename, page_title))
-        nav_items.append((sid, filename, page_title, nav_title_html))
+        nav_items.append({
+            "id": sid,
+            "filename": filename,
+            "title": page_title,
+            "html": nav_title_html,
+            "depth": depth,
+        })
         nav_depths[sid] = depth
 
     return pages, nav_items, nav_depths
 
 
+def build_nav_tree(nav_items: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    roots: List[Dict[str, Any]] = []
+    stack: List[Dict[str, Any]] = []
+
+    for item in nav_items:
+        node: Dict[str, Any] = {
+            "id": item["id"],
+            "filename": item["filename"],
+            "title": item["title"],
+            "html": item["html"],
+            "depth": item["depth"],
+            "children": [],
+        }
+
+        while stack and int(stack[-1]["depth"]) >= int(node["depth"]):
+            stack.pop()
+
+        if stack:
+            cast(List[Dict[str, Any]], stack[-1]["children"]).append(node)
+        else:
+            roots.append(node)
+
+        stack.append(node)
+
+    return roots
+
+
 def build_global_nav(
-    nav_items: list[tuple[str, str, str, str]],
+    nav_items: List[Dict[str, Any]],
     current_id: str,
     current_file: str,
 ) -> str:
-    lines = ['<nav class="global-nav" aria-label="Global navigation">', "  <ul>"]
-    for sid, filename, _title, nav_title_html in nav_items:
-        cls = ' class="active"' if sid == current_id else ""
-        href = relative_href(current_file, filename)
-        lines.append(f"    <li{cls}><a href=\"{href}\">{nav_title_html}</a></li>")
-    lines += ["  </ul>", "</nav>"]
+    tree = build_nav_tree(nav_items)
+    lines = ['<nav class="global-nav" aria-label="Global navigation">']
+
+    def render_nodes(nodes: List[Dict[str, Any]], level: int) -> None:
+        indent = "  " * (level + 1)
+        lines.append(f"{indent}<ul>")
+        for node in nodes:
+            sid = cast(str, node["id"])
+            filename = cast(str, node["filename"])
+            nav_title_html = cast(str, node["html"])
+            depth = int(cast(int, node["depth"]))
+            children = cast(List[Dict[str, Any]], node["children"])
+
+            classes = [f"nav-depth-{depth}"]
+            if depth > 0:
+                classes.append("nav-sub")
+            if sid == current_id:
+                classes.append("active")
+            if children:
+                classes.append("has-children")
+            cls = f' class="{" ".join(classes)}"'
+
+            href = relative_href(current_file, filename)
+            lines.append(f"{indent}  <li{cls}>")
+            if children:
+                group_id = f"nav-group-{sid}"
+                lines.append(f"{indent}    <div class=\"nav-item-row\">")
+                lines.append(
+                    f"{indent}      <a href=\"{href}\" data-nav-depth=\"{depth}\">{nav_title_html}</a>"
+                )
+                lines.append(
+                    f"{indent}      <button class=\"nav-collapse-toggle\" aria-controls=\"{group_id}\" aria-expanded=\"true\" aria-label=\"Collapse subsection\"></button>"
+                )
+                lines.append(f"{indent}    </div>")
+                lines.append(f"{indent}    <div class=\"nav-children\" id=\"{group_id}\">")
+                render_nodes(children, level + 2)
+                lines.append(f"{indent}    </div>")
+            else:
+                lines.append(f"{indent}    <a href=\"{href}\" data-nav-depth=\"{depth}\">{nav_title_html}</a>")
+            lines.append(f"{indent}  </li>")
+        lines.append(f"{indent}</ul>")
+
+    render_nodes(tree, 0)
+    lines.append("</nav>")
     return "\n".join(lines)
 
 
@@ -427,8 +498,20 @@ def split_and_generate(full_html: Path) -> None:
 
         local_toc = build_local_toc(extract_local_toc(page_section))
         global_nav = build_global_nav(nav_items, sid, fname)
-        prev_link = (nav_items[index - 1][1], nav_items[index - 1][2]) if index > 0 else None
-        next_link = (nav_items[index + 1][1], nav_items[index + 1][2]) if index < len(nav_items) - 1 else None
+        prev_link = (
+            (
+                cast(str, nav_items[index - 1]["filename"]),
+                cast(str, nav_items[index - 1]["title"]),
+            )
+            if index > 0 else None
+        )
+        next_link = (
+            (
+                cast(str, nav_items[index + 1]["filename"]),
+                cast(str, nav_items[index + 1]["title"]),
+            )
+            if index < len(nav_items) - 1 else None
+        )
 
         page = build_page(
             section_html=page_section.decode_contents(),

@@ -70,7 +70,7 @@ $
 ]
 
 #corollary[
-For two given vectors $vb(a) "and" vb(b)$, $
+For two given vectors $vb(a)$ and $vb(b)$, $
 bold(a)$ is orthogonal to $
 bold(b)$
 iff $bold(a) dot bold(b) = 0.
