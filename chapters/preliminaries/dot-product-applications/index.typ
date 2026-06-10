@@ -56,6 +56,13 @@
   #theorem[
     The normal vector at a point $(u_0, v_0)$ wrt a surface that is defined by $vb(r) (u, v)$ is $nabla F(u) times nabla F(v)$, where $vb(r)$ is a 3D vector.
   ]
+
+  #theorem[
+    Three planes intersect at a point iff their normal vectors are coplanar. 
+  ]
+  #proof[
+    Left as an exercise. 
+  ]
 + In Physics, when dealing with force, dot  product is often critical.
   #example[
 #let image1 = image("/assets/image.png", width: 53%)
