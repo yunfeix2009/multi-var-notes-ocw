@@ -9,6 +9,9 @@ By way of introducing the subject, we first introduce several pertinent operatio
   #include "dot-product-applications/index.typ"
 
 ]
+#chapter-section("matrices")[
+  #include "matrices/index.typ"
+]
 #chapter-section("cross_product")[
   #include "cross-product/index.typ"
 ]

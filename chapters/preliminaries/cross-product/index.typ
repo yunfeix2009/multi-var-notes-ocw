@@ -21,26 +21,7 @@ With @def:dot-product, we have the means to often conveniently express angles an
   However, in this way, the area is not necessarily positive. Thus, we adopt the convention of signed area: the area formed by $vb(a)$ rotating counterclockwise to $vb(b)$ is positive by convention.
 ]
 
-#definition[
-  Determinants in 3D is defined as the following, $ (vb(a), vb(b), vb(c))
-  =
-  det mat(a_1, a_2, a_3; b_1, b_2, b_3; c_1, c_2, c_3)
-  =
-  a_1 det mat(
-    b_2, b_3;
-    c_2, c_3
-  )
-  - a_2 det mat(
-    b_1, b_3;
-    c_1, c_3
-  )
-  + a_3 det mat(
-    b_1, b_2;
-    c_1, c_2
-  ) $
-]
-
-Similar to the two dimensional determinants, the three dimension determinants also hold physical significance. In this case, it gives the (signed) volume of the parallelepiped formed by $vb(a), vb(b)$, and $vb(c)$.
+By the determinant definitions from the matrices section, the three-dimensional determinant gives the signed volume of the parallelepiped formed by $vb(a), vb(b),$ and $vb(c)$.
 
 Now, we are ready to define cross product.
 #definition[
