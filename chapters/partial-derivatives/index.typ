@@ -10,3 +10,6 @@ Here, we examine the concepts of differentiation for functions with more than on
 #chapter-section("geometric-interpretation")[
   #include "geometric-lens/index.typ"
 ]
+#chapter-section("extremum")[
+  #include "extremum/index.typ"
+]

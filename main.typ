@@ -49,6 +49,8 @@
 #include "/chapters/index.typ"
 
 // appendix
+// #pagebreak()
+
 #set heading(numbering: "A.1")
 #counter(heading).update(0)
 #chapter-section("appendix-1")[
