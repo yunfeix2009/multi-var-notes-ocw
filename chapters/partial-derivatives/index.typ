@@ -6,3 +6,7 @@ Here, we examine the concepts of differentiation for functions with more than on
 #chapter-section("fundamentals")[
   #include "fundamentals/index.typ"
 ]
+
+#chapter-section("geometric-interpretation")[
+  #include "geometric-lens/index.typ"
+]
