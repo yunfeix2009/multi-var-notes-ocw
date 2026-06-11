@@ -102,6 +102,32 @@ svg {
   height: auto;
 }
 
+.boat-reflow {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  margin: 0 0 1rem;
+}
+
+.boat-reflow-text {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.boat-reflow-text p:first-child {
+  margin-top: 0;
+}
+
+.boat-reflow-figure {
+  flex: 0 0 min(42%, 320px);
+}
+
+.boat-reflow-figure img,
+.boat-reflow-figure svg {
+  display: block;
+  width: 100%;
+}
+
 .topbar {
   position: sticky;
   top: 0;
