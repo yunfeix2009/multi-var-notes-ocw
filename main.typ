@@ -49,7 +49,7 @@
 #include "/chapters/index.typ"
 
 #if not _is-html {
-  pagebreak()
+  colbreak()
 }
 // appendix
 
