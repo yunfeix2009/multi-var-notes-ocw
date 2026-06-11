@@ -9,6 +9,8 @@ One of the most consequential applications of partial derivatives is in optimiza
 
 Now, the question is how to determine whether a critical point ($f_x = f_y = 0$) is a maximum or minimum, or neither. In fact, it is possible to have a critical point as a saddle point, that is neither a maximum or minimum. 
 
+Thus, a natural question that comes is how to determine what type of extremum a critical point is. For that, we look into the second-derivative test. 
+
 === Application -- Least-Squares Interpolation
 Motivation: Given experimental data $(x_i, y_i)$, what is the "best-fit" line that describes the relationship between $x$ and $y$. 
 
@@ -23,3 +25,6 @@ Moreover, with the second-derivative test, it could be shown that the critical p
 This method could be used on non-linear fitting as well. For example, for an exponential fitting in the form of $y = a e^(b x)$, where $x$ and $y$ are variables and $a$ and $b$ are constants, a linear form could be obtained by applying $ln$ on both sides: $ln(y) = ln(a) + b x$. From here, we could apply the method of least-squares and solve for $a$ and $b$. 
 
 Additionally, this method could be generalized to any finite number of parameters. With the regression function $f(x, y, z, dots)$ and $ D(x, y, z, dots) = sum_(i=1)^n (y_i - f(x, y, z, dots)), $ a system of linear equations could be obtained by setting $pdv(D, x) = 0$, $pdv(D, y) = 0$, etc. Then, it remains to show that the critical value for $(x, y, z, dots)$ obtained does minimize $D$. 
+
+
+
