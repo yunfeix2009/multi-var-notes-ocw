@@ -13,3 +13,9 @@ Here, we examine the concepts of differentiation for functions with more than on
 #chapter-section("extremum")[
   #include "extremum/index.typ"
 ]
+#chapter-section("Differential")[
+  #include "differentials/index.typ"
+]
+#chapter-section("chain-rule")[
+  #include "chain-rule/index.typ"
+]
