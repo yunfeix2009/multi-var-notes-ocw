@@ -48,6 +48,9 @@
 
 #include "/chapters/index.typ"
 
+#if not _is-html {
+  pagebreak()
+}
 // appendix
 
 #set heading(numbering: "A.1")

@@ -10,4 +10,3 @@
   #include "partial-derivatives/index.typ"
 ]
 
-#pagebreak()

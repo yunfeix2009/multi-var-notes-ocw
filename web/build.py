@@ -33,7 +33,7 @@ ASSETS_SRC = WEB_DIR / "assets"
 
 LANG = "en"
 SITE_TITLE = "Multivariable Calculus"
-GITHUB_URL = "https://github.com/slipperking/multi-var-notes-ocw"
+GITHUB_URL = "https://github.com/yunfeix2009/multi-var-notes-ocw"
 BASE_URL = "/"
 HEADING_TAGS = {"h2", "h3", "h4", "h5", "h6"}
 TOC_MIN_LEVEL = 2
