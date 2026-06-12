@@ -41,7 +41,7 @@
     Geometrically, this is all vectors that are orthogonal to a fixed vector $mat(a; b; c)$, therefore a plane.
   ]
 
-  #corollary[of @ex:dot-product-angle-2][
+  #corollary[
     For a plane defined by $a x + b y + c z = 0$, it's normal vector is $mat(a; b; c)$.
   ]
 
