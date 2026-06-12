@@ -44,15 +44,22 @@ Polar coordinates poses a motivating case for which $x$ and $y$ are also multi v
   \ & quad quad "" + (cos theta)/r pdv(, theta) ((cos theta)/r pdv(, theta) + sin theta pdv(, r))
   \ & quad quad quad""  + sin theta pdv(, r) ((cos theta)/r pdv(, theta) + sin theta pdv(, r))
 
-  \ &= - (sin theta)/r (- (cos theta)/r - (cos theta)/r pdv(, theta, 2) - sin theta pdv(, theta, r))
-  \ & quad"" + cos theta ((sin theta)/r^2 - (sin theta)/r pdv(, r, theta) + cos theta pdv(, r, 2))
-  \ & quad quad"" + (cos theta)/r (- (sin theta)/r pdv(, theta ,2) + cos theta pdv(, theta, r))
-  \ & quad quad quad"" + sin theta (- (cos theta)/r^2 pdv(, theta, r) + sin theta pdv(, r, 2))
-
-  \ &= () pdv(, theta, 2) + () pdv(, theta, r) + () pdv(, r, 2) + () pdv.
+  \ &= - (sin theta)/r (- (cos theta)/r pdv(, theta) - (sin theta)/r pdv(, theta, 2) - sin theta pdv(, r)  + cos theta pdv(, r, theta))
+  \ & quad"" + cos theta ((sin theta)/r^2 pdv(,  theta) - (sin theta)/r pdv(, r, theta) + cos theta pdv(, r, 2))
+  \ & quad quad"" + (cos theta)/r (- (sin theta)/r pdv(, theta ) + (cos theta)/r pdv(, theta, 2) + cos theta pdv(, r) + sin theta pdv(, r, theta))
+  \ & quad quad quad"" + sin theta (-(cos theta)/r^2 pdv(,  theta) + (cos theta)/r pdv(, r, theta) + sin theta pdv(, r, 2)).
    $ 
+
+   Combining like terms gives, 
+   $ 
+  & = ((sin^2 theta)/r^2 +  (cos^2 theta)/r^2 ) pdv(, theta, 2) + (cos^2 theta + sin^2 theta) pdv(, r, 2) 
+  \ & quad""+ (- (sin theta cos theta)/r - - (sin theta cos theta)/r + (sin theta cos theta)/r + (sin theta cos theta)/r) pdv(, theta, r) 
+  \ & quad quad"" + ((sin^2 theta)/r + (cos^2 theta)/r) pdv(, r)
+  \ & quad quad quad""+ ((sin theta cos theta)/r^2 + (sin theta cos theta)/r^2 - (sin theta cos theta)/r^2 - (sin theta cos theta)/r^2) pdv(, theta)
+  \ & = 1/r^2 pdv(, theta, 2) + pdv(, r, 2), + 1/r pdv(, r)
+  . $
 ]
 #remark[
-  Notice in here, we abused the notation as if $pdv(a, b, 2) = pdv(a, b) pdv(a, b)$ as multiplication. However, this becomes tricky with constants. If $pdv(a, b, 2)$ is _directly_ treated as multiplication, then the third equality will follow as: $ & =y^2/r^4 pdv(, theta, 2) + x^2/r^2 pdv(, r, 2) - (2x y)/r^3 pdv(theta, r) \ & quad"" + x^2/r^4 pdv(, theta, 2) + y^2/r^2 pdv(, r, 2) + (2 x y)/r^3 pdv(, theta, r) \ &= 1/r^2 pdv(, theta, 2) + pdv(, r, 2), $
+  Notice in here, we abused the notation as if $pdv(a,b,2) =  pdv(,b) pdv(,b) a =(pdv(,b))^2 a$. However, if this abuse is taken further, treating $pdv(a, b, 2)$ as $pdv(a, b) dot pdv(a, b)$, it is not necessarily true, especially with the constants. If $pdv(a, b, 2)$ is _directly_ treated as multiplication, then the third equality will follow as: $ & =y^2/r^4 pdv(, theta, 2) + x^2/r^2 pdv(, r, 2) - (2x y)/r^3 pdv(theta, r) \ & quad"" + x^2/r^4 pdv(, theta, 2) + y^2/r^2 pdv(, r, 2) + (2 x y)/r^3 pdv(, theta, r) \ &= 1/r^2 pdv(, theta, 2) + pdv(, r, 2), $
   which misses the $1/r pdv(, r)$ term. 
 ]
