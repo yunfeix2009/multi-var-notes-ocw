@@ -19,7 +19,7 @@ However, it is not entirely obvious what are differentials -- they are not numbe
 
 + First, $dif f != Delta f$. $Delta f$ is meant to be a number while $dif f$ encodes how does change in $x$, $y$, and $z$ affect $f$. 
 + Also, $dif f$ serves as a placeholder for small variables $Delta x$, $Delta y$, and $Delta z$ to get $Delta f approx f_x Delta x + f_y Delta y + f_z Delta z$. 
-+ Dividing $dif t$ on both sides to find the rate of change wrt $t$. $dv(f, t) = f_x dv(x, t) + f_y dv(y, t) + dv(z, t)$. 
++ Dividing $dif t$ on both sides to find the rate of change wrt $t$. $ dv(f, t) = f_x dv(x, t) + f_y dv(y, t) + dv(z, t). $ 
 
 In summary, $dif != Delta$
 

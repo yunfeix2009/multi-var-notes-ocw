@@ -45,17 +45,7 @@
     For a plane defined by $a x + b y + c z = 0$, it's normal vector is $mat(a; b; c)$.
   ]
 
-  This result could be generalized to surfaces beyond planes.
-  #theorem[
-    The normal vector at a point $(x_0, y_0, z_0)$ wrt a surface that is implicitly defined by $F(x, y, z) = 0$ is $nabla F(x_0, y_0, z_0)$.
-  ]
-  #proof[
-    Denote the surface as $S$ and the normal vector $vb(n)$. Consider an arbitrary curve $gamma subset S$ that is parametrized by $gamma(t)$ and passes through $(x_0, y_0, z_0)$,  since $vb(n)$ is orthogonal to $gamma$ at $(x_0, y_0, z_0)$, we have $dv(gamma, t) dot vb(n) = 0$. Since $gamma subset S$, for any $t$, $(F compose gamma)(t) = 0$, and thus $F compose gamma$ is constant. Hence, $pdv(F compose gamma, t) =0$. However, $pdv(F compose gamma, t) =$
-  ]
-
-  #theorem[
-    The normal vector at a point $(u_0, v_0)$ wrt a surface that is defined by $vb(r) (u, v)$ is $nabla F(u) times nabla F(v)$, where $vb(r)$ is a 3D vector.
-  ]
+  This result could be generalized to surfaces beyond planes, See @thm:normal-vector-gradient and @thm:normal-vector-cross.
 
   #theorem[
     Three planes intersect at a point iff their normal vectors are coplanar. 

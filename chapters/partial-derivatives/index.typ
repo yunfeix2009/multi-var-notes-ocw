@@ -19,3 +19,6 @@ Here, we examine the concepts of differentiation for functions with more than on
 #chapter-section("chain-rule")[
   #include "chain-rule/index.typ"
 ]
+#chapter-section("gradient")[
+  #include "gradient/index.typ"
+]
