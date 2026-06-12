@@ -15,4 +15,5 @@ With chain rule, $ dv(w, s) |_vu(u) = nabla w dot vu(u). $
 
 As a quick sanity check, $ dv(w, s) |_vu(i) = nabla w dot vu(i) = pdv(w, x). $
 
-Furthermore, $ nabla w dot vu(u) = abs(nabla w ) cos theta. $ Since $cos theta <=1$, this implies the change of the function is maximized along the direction of the gradient.  
+Furthermore, $ nabla w dot vu(u) = abs(nabla w ) cos theta. $ Since $cos theta <=1$, this implies the increment of the function is maximized along the direction of the gradient, minimized in the opposite direction as the gradient. Also, $vu(u) perp nabla w <==> vu(u)$ is tangent to level. 
+ 
