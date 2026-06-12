@@ -22,3 +22,6 @@ Here, we examine the concepts of differentiation for functions with more than on
 #chapter-section("gradient")[
   #include "gradient/index.typ"
 ]
+#chapter-section("directional-derivative")[
+  #include "directional-derivative/index.typ"
+]

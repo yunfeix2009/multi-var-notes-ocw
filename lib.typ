@@ -3,6 +3,7 @@
 #import "@local/ctheorems:2.0.0": *
 #import "@preview/physica:0.9.8" : *
 #import "@preview/meander:0.4.3" : *
+// #import "@preview/lilaq:0.6.0" : *
 
 #import thm-themes.ams: *
 

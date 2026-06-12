@@ -144,7 +144,6 @@ Matrix algebra satisfies many properties for a nice algebraic structure.
     Thus, how to find the inverse of a matrix becomes a natural question. Here, I claim, without proof, that if the adjunct matrix of a square matrix $bold(A)$ is obtained by taking the transpose of the co-factor of the minors of $bold(A)$, then $ bold(A)^(-1) = 1/(det bold(A)) op("adj")(bold(A)). $
 
 #example[
-  #example[
   Consider the matrix
 
   $
@@ -183,6 +182,6 @@ Matrix algebra satisfies many properties for a nice algebraic structure.
   =
   mat(-1; 0).
   $
-]
+
 Thus, a system described by $hat(bold(i))$ and $hat(bold(j))$ is mapped to a system of $hat(bold(j))$ and $-hat(bold(j))$. Therefore, $90^degree$ counterclockwise. 
 ]

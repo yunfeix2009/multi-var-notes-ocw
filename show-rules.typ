@@ -111,17 +111,17 @@
     }
   }
 
-  show grid: it => context {
-    if target() == "html" {
-      if (measure(it).width <= 360pt) {
-        html.frame(block(it))
-      } else {
-        html.frame(block(width: 360pt, it))
-      }
-    } else {
-      it
-    }
-  }
+  // show grid: it => context {
+  //   if target() == "html" {
+  //     if (measure(it).width <= 360pt) {
+  //       html.frame(block(it))
+  //     } else {
+  //       html.frame(block(width: 360pt, it))
+  //     }
+  //   } else {
+  //     it
+  //   }
+  // }
 
   doc
 }
