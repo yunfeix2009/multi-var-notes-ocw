@@ -10,6 +10,9 @@
   #include "differentiation/index.typ"
 ]
 
+#chapter-section("integration")[
+  #include "integration/index.typ"
+]
 #if not _is-html {
   // set page(background:none)
   oldpagebreak()

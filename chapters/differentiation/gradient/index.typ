@@ -21,3 +21,5 @@ Observe that now we could write $ dv(f, t) = nabla f dot dv(vb(r), t). $
 #solution[
   The normal to the plane is $nabla w$ where $w = f(x, y, z)$. $ nabla w &= (f_x, f_y, f_z)  &= (2x, 2y, -2z) = (4, 2, -2). $ Thus, the plane is $ 4x + 2y - 2z = 4 dot 2 + 2 dot 1 - 2 dot 1 = 8.  $ 
 ]
+
+We continue our discussion with gradient with directional derivatives. 

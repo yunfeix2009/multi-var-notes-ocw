@@ -1,4 +1,7 @@
 #import "/lib.typ": *
+#include "../../differentiation/gradient/index.typ"
+#include "../dot-product/index.typ"
+#include "../../differentiation/geometric-lens/index.typ"
 
 == Dot Product Applications
 

@@ -25,3 +25,6 @@ Here, we examine the concepts of differentiation for functions with more than on
 #chapter-section("directional-derivative")[
   #include "directional-derivative/index.typ"
 ]
+#chapter-section("lagrange-multipliers")[
+  #include "lagrange-multipliers/index.typ"
+]
