@@ -1,6 +1,4 @@
 #import "/lib.typ": *
-#include "../dot-product/index.typ"
-#include "../dot-product-applications/index.typ"
 
 == Cross Product
 With @def:dot-product, we have the means to often conveniently express angles and lengths in terms of vectors. However, there is another important concept that we are unable to grapple with using dot product. And that is area. For which we seek help from the use of @def:cross-product.

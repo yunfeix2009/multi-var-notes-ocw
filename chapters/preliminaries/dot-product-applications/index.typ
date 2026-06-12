@@ -1,7 +1,4 @@
 #import "/lib.typ": *
-#include "../../differentiation/gradient/index.typ"
-#include "../dot-product/index.typ"
-#include "../../differentiation/geometric-lens/index.typ"
 
 == Dot Product Applications
 
@@ -123,5 +120,4 @@
     while the direction is along $l_bold(B).$
     geometrically, there is a $- hat(bold(i))$ component iff $alpha + beta > 90^compose$
   ]
-
 
