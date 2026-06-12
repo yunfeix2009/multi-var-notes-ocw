@@ -1,5 +1,9 @@
 #import "/lib.typ": *
 
+// #import "../../differentiation/gradient/index.typ" : *
+// #import "../dot-product/index.typ": *
+// #import "../../differentiation/geometric-lens/index.typ": *
+
 == Dot Product Applications
 
 + One of the first fundamental applications of dot product is converting between lengths and angles and coordinates.
@@ -120,4 +124,5 @@
     while the direction is along $l_bold(B).$
     geometrically, there is a $- hat(bold(i))$ component iff $alpha + beta > 90^compose$
   ]
+
 
