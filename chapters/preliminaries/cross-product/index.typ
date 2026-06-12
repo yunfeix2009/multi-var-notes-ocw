@@ -41,6 +41,19 @@ Now, we are ready to define cross product.
 #proof[
   This result comes directly from the expansion of both sides. However, an argument based on the geometric meaning in terms of the area of the parallelepiped could also be established.
 ]
+#theorem[Lagrange Identity (two variables)][
+  $ norm(vb(a) times vb(b))^2 = norm(vb(a))^2 norm(vb(b))^2 - (vb(a) dot vb(b))^2 $
+]<thm:lagrange-identity>
+#proof[
+  Although direct expansion with the component form does verify this identity, we hereby proceed with a more geometric argument. 
+
+  Let $theta$ be the angle between $vb(a)$ and $vb(b)$, we have 
+  $ norm(vb(a) times vb(b))^2 &= norm(abs(vb(a)) norm(vb(b)) sin theta) \ &= (norm(vb(a))^2 norm(vb(b))^2 dot sin^2 theta \ &=  (norm(vb(a))^2 norm(vb(b))^2 dot (1- cos^2 theta)\ &=norm(vb(a))^2 norm(vb(b))^2 - (vb(a) dot vb(b))^2. $
+]
+#remark[
+  In fact, this theorem is generalizable to finitely many vectors. 
+]
+
 
 #example[Pset2 PartII P1][
   Suppose we know that when the three planes $P_1$, $P_2$, and $P_3$ in $RR^3$ intersect in pairs, we get three lines $L_1$, $L_2$, and $L_3$ which are _distinct_ and _parallel_.

@@ -3,18 +3,22 @@
 #chapter-section("preliminaries")[
   #include "preliminaries/index.typ"
 ]
-// #chapter-section("vector-differential-operators")[
-//   #include "vector differential operators/index.typ"
-// ]
+
+#if not _is-html {
+  oldpagebreak()
+}
 #chapter-section("differentiation")[
   #include "differentiation/index.typ"
 ]
+
+#if not _is-html {
+  oldpagebreak()
+}
 
 #chapter-section("integration")[
   #include "integration/index.typ"
 ]
 #if not _is-html {
-  // set page(background:none)
   oldpagebreak()
 }
 // appendix
