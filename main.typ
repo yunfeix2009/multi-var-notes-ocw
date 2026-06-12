@@ -48,16 +48,3 @@
 
 #include "/chapters/index.typ"
 
-#if not _is-html {
-  colbreak()
-}
-// appendix
-
-#set heading(numbering: "A.1")
-#counter(heading).update(0)
-#chapter-section("appendix-1")[
-  #include "/chapters/appendix-1/index.typ"
-]
-#chapter-section("appendix-2")[
-  #include "/chapters/appendix-2/index.typ"
-]
