@@ -28,3 +28,9 @@ Here, we examine the concepts of differentiation for functions with more than on
 #chapter-section("lagrange-multipliers")[
   #include "lagrange-multipliers/index.typ"
 ]
+#chapter-section("non-independent-variables")[
+  #include "non-independent-variables/index.typ"
+]
+#chapter-section("partial-differential-equations")[
+  #include "partial-differential-equations/index.typ"
+]
