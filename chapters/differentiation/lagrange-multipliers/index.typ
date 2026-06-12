@@ -12,7 +12,7 @@ Thus, $nabla f perp vu(u)$. But $nabla g perp vu(u)$ since $vu(u)$ is tangent to
 Therefore, the key observation here is that at extremum, the level curve of $f$ is tangent to $g$. In other words, their normal vectors are parallel. Expressed in terms of gradient, $ nabla f = lambda nabla g, lambda in RR without 0. $ Upon solving this equation along with the constraint equation of $g = c$, extrema are obtained. 
 
 #example[
-  What point on the hyperbola $x y = 1$ is closest to the origin. 
+  Find the point(s) on the hyperbola $x y = 1$ that is closest to the origin. 
 ]
 #solution[
   Notice the quantity we are minimizing is the distance to the origin. For a certain point $(x_0, y_0)$, its distance to the origin is $sqrt(x_0^2 + y_0^2)$. Minimizing which is equivalent to minimizing $f(x, y) = x^2 + y^2$. Then, for our constraint equation, we let $g(x, y) := x y$, then $g(x, y) = 1$. 
