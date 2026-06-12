@@ -1,6 +1,6 @@
 #import "/lib.typ":chapter-section
 
-= Partial Derivatives 
+= Differentiation 
 Here, we examine the concepts of differentiation for functions with more than one variables along with their applications. 
 
 #chapter-section("fundamentals")[
