@@ -5,6 +5,56 @@
   var navScriptUrl = currentScript && currentScript.src
     ? new URL(currentScript.src, window.location.href)
     : new URL(window.location.href);
+  var typstColorizeCounter = 0;
+
+  function colorizeTypstSvgFrames() {
+    document.querySelectorAll("svg.typst-frame").forEach(function (svg) {
+      if (svg.dataset.typstColorized === "true") {
+        return;
+      }
+
+      svg.dataset.typstColorized = "true";
+
+      var ns = "http://www.w3.org/2000/svg";
+      var defs = svg.querySelector("defs");
+      if (!defs) {
+        defs = document.createElementNS(ns, "defs");
+        svg.insertBefore(defs, svg.firstChild);
+      }
+
+      var filterId = "typst-colorize-" + (++typstColorizeCounter);
+      var filter = document.createElementNS(ns, "filter");
+      filter.setAttribute("id", filterId);
+      filter.setAttribute("color-interpolation-filters", "sRGB");
+
+      var flood = document.createElementNS(ns, "feFlood");
+      flood.setAttribute("flood-color", "var(--typst-svg-color, transparent)");
+      flood.setAttribute("flood-opacity", "1");
+      flood.setAttribute("result", "typstColor");
+
+      var composite = document.createElementNS(ns, "feComposite");
+      composite.setAttribute("in", "typstColor");
+      composite.setAttribute("in2", "SourceAlpha");
+      composite.setAttribute("operator", "in");
+      composite.setAttribute("result", "colorLayer");
+
+      var merge = document.createElementNS(ns, "feMerge");
+      var mn1 = document.createElementNS(ns, "feMergeNode");
+      mn1.setAttribute("in", "SourceGraphic");
+      var mn2 = document.createElementNS(ns, "feMergeNode");
+      mn2.setAttribute("in", "colorLayer");
+      merge.appendChild(mn1);
+      merge.appendChild(mn2);
+
+      filter.appendChild(flood);
+      filter.appendChild(composite);
+      filter.appendChild(merge);
+      defs.appendChild(filter);
+
+      svg.style.setProperty("--_typst-filter", "url(#" + filterId + ")");
+      svg.classList.add("typst-colorized");
+    });
+  }
 
   var THEMES = ["light", "dark", "auto"];
   var THEME_ICON_LIGHT = '<svg viewBox="0 0 512 512" width="18" height="18" aria-hidden="true" fill="currentColor"><path d="M361.5 1.2c5 2.1 8.6 6.6 9.6 11.9L391 121l107.9 19.8c5.3 1 9.8 4.6 11.9 9.6s1.5 10.7-1.6 15.2L446.9 256l62.3 90.3c3.1 4.5 3.7 10.2 1.6 15.2s-6.6 8.6-11.9 9.6L391 391 371.1 498.9c-1 5.3-4.6 9.8-9.6 11.9s-10.7 1.5-15.2-1.6L256 446.9l-90.3 62.3c-4.5 3.1-10.2 3.7-15.2 1.6s-8.6-6.6-9.6-11.9L121 391 13.1 371.1c-5.3-1-9.8-4.6-11.9-9.6s-1.5-10.7 1.6-15.2L65.1 256 2.8 165.7c-3.1-4.5-3.7-10.2-1.6-15.2s6.6-8.6 11.9-9.6L121 121 140.9 13.1c1-5.3 4.6-9.8 9.6-11.9s10.7-1.5 15.2 1.6L256 65.1 346.3 2.8c4.5-3.1 10.2-3.7 15.2-1.6zM160 256a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zm224 0a128 128 0 1 0 -256 0 128 128 0 1 0 256 0z"></path></svg>';
@@ -54,6 +104,7 @@
   });
 
   applyTheme(storedMode);
+  colorizeTypstSvgFrames();
 
   var sidebarLeft = document.querySelector(".sidebar-left");
   var sidebarRight = document.querySelector(".sidebar-right");
@@ -270,11 +321,11 @@
               count++;
             }
           } else {
-            var pageUrl = data.url || "#";
-            var pageExcerpt = data.excerpt || "";
-            html += '<a class="search-result" href="' + pageUrl + '">'
+            var url = data.url || "#";
+            var excerpt = data.excerpt || "";
+            html += '<a class="search-result" href="' + url + '">'
               + '<div class="search-result-title">' + escapeHtml(pageTitle) + '</div>'
-              + '<div class="search-result-excerpt">' + pageExcerpt + '</div>'
+              + '<div class="search-result-excerpt">' + excerpt + '</div>'
               + '</a>';
             count++;
           }
@@ -327,5 +378,168 @@
         closeSidebars();
       }
     }
+  });
+
+  var tocLinks = document.querySelectorAll(".local-toc a");
+  if (tocLinks.length > 0) {
+    var topbar = document.querySelector(".topbar");
+    function getOffset() {
+      var rootStyles = window.getComputedStyle(document.documentElement);
+      var scrollPaddingTop = parseFloat(rootStyles.scrollPaddingTop || "0");
+      if (!Number.isNaN(scrollPaddingTop) && scrollPaddingTop > 0) {
+        return scrollPaddingTop;
+      }
+      return (topbar ? topbar.offsetHeight : 56) + 16;
+    }
+
+    var hashActivationSlack = 48;
+    var pendingTargetId = null;
+    var pendingTargetUntil = 0;
+    var headingEls = [];
+    var headingMap = {};
+
+    tocLinks.forEach(function (link) {
+      var id = link.getAttribute("href");
+      if (id && id.startsWith("#")) {
+        var el = document.getElementById(id.slice(1));
+        if (el) {
+          headingEls.push(el);
+          headingMap[el.id] = link;
+        }
+      }
+    });
+
+    var ticking = false;
+    function updateSpy() {
+      ticking = false;
+      var current = null;
+      var offset = getOffset();
+      var now = (window.performance && typeof window.performance.now === "function")
+        ? window.performance.now()
+        : Date.now();
+
+      if (pendingTargetId && now <= pendingTargetUntil) {
+        var pendingTarget = document.getElementById(pendingTargetId);
+        if (pendingTarget && headingMap[pendingTarget.id]) {
+          var pendingRect = pendingTarget.getBoundingClientRect();
+          if (pendingRect.bottom > 0 && pendingRect.top < window.innerHeight) {
+            current = pendingTarget;
+            if (Math.abs(pendingRect.top - offset) <= hashActivationSlack + 8) {
+              pendingTargetId = null;
+              pendingTargetUntil = 0;
+            }
+          }
+        }
+      } else if (pendingTargetId) {
+        pendingTargetId = null;
+        pendingTargetUntil = 0;
+      }
+
+      var hash = window.location.hash;
+      if (!current && hash && hash.length > 1) {
+        var hashTarget = document.getElementById(hash.slice(1));
+        if (hashTarget && headingMap[hashTarget.id]) {
+          var targetRect = hashTarget.getBoundingClientRect();
+          if (targetRect.top <= offset + hashActivationSlack && targetRect.bottom > 0) {
+            current = hashTarget;
+          }
+        }
+      }
+
+      if (!current) {
+        var best = null;
+        var bestScore = Infinity;
+        for (var i = 0; i < headingEls.length; i++) {
+          var rect = headingEls[i].getBoundingClientRect();
+          if (rect.bottom <= 0) {
+            continue;
+          }
+
+          var score = Math.abs(rect.top - offset);
+
+          if (rect.top < offset) {
+            score += 12;
+          }
+
+          if (score < bestScore) {
+            best = headingEls[i];
+            bestScore = score;
+          }
+        }
+        current = best;
+      }
+      tocLinks.forEach(function (l) { l.classList.remove("active"); });
+      if (current && headingMap[current.id]) {
+        headingMap[current.id].classList.add("active");
+      }
+    }
+
+    window.addEventListener("scroll", function () {
+      if (!ticking) {
+        requestAnimationFrame(updateSpy);
+        ticking = true;
+      }
+    });
+
+    window.addEventListener("hashchange", function () {
+      var hash = window.location.hash;
+      pendingTargetId = hash && hash.length > 1 ? hash.slice(1) : null;
+      pendingTargetUntil = pendingTargetId ? (
+        ((window.performance && typeof window.performance.now === "function")
+          ? window.performance.now()
+          : Date.now()) + 1200
+      ) : 0;
+      requestAnimationFrame(updateSpy);
+    });
+
+    tocLinks.forEach(function (link) {
+      link.addEventListener("click", function () {
+        var href = link.getAttribute("href");
+        pendingTargetId = href && href.startsWith("#") ? href.slice(1) : null;
+        pendingTargetUntil = pendingTargetId ? (
+          ((window.performance && typeof window.performance.now === "function")
+            ? window.performance.now()
+            : Date.now()) + 1200
+        ) : 0;
+        requestAnimationFrame(function () {
+          requestAnimationFrame(updateSpy);
+        });
+      });
+    });
+
+    updateSpy();
+  }
+
+  document.querySelectorAll('.thm-proof, .thm-solution').forEach(block => {
+    const qedPara = block.querySelector('p.qed');
+    if (!qedPara) return;
+
+    const prev = qedPara.previousElementSibling;
+    if (!prev || !(prev.tagName === 'P' || prev.tagName === 'SVG')) return;
+    const target = prev;
+
+    const qedContent = qedPara.querySelector('span, svg');
+    if (qedContent) {
+      const wrapper = document.createElement('span');
+      wrapper.style.cssText = 'float:right; margin-left:0.5em; line-height:1;';
+      wrapper.appendChild(qedContent.cloneNode(true));
+      target.appendChild(wrapper);
+    }
+    qedPara.remove();
+  });
+
+  document.querySelectorAll('ul.itemize-ul-list').forEach(ul => {
+    const temp = document.createElement('span');
+    temp.style.cssText = 'position:absolute;visibility:hidden;white-space:nowrap;';
+    document.body.appendChild(temp);
+
+    let maxWidth = 0;
+    ul.querySelectorAll('.data-marker-item').forEach(li => {
+      temp.textContent = li.dataset.marker ?? '';
+      maxWidth = Math.max(maxWidth, temp.offsetWidth);
+    });
+
+    document.body.removeChild(temp);
+    ul.style.setProperty('--marker-slot', `${maxWidth + 20}px`);
   });
 })();
