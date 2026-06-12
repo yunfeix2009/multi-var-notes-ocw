@@ -14,9 +14,6 @@ Observe that now we could write $ dv(f, t) = nabla f dot dv(vb(r), t). $
 ]
 
 
-#theorem[
-  The normal vector at a point $(u_0, v_0)$ wrt a surface that is defined by $vb(r) (u, v)$ is $nabla F(u) times nabla F(v)$, where $vb(r)$ is a 3D vector.
-]<thm:normal-vector-cross>
 
 #example[
   Find the tangent plane to $x^2 + y^2 - z^2 = 4$ at $(2, 1, 1)$. 

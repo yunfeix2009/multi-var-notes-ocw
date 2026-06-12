@@ -14,3 +14,11 @@ For a function of two variables, $f(x, y)$, one may similarly define the tangent
 
   Thus, the tangent plane could be obtained with cross product: $ z = z_0 + a(x-x_0) + b(y-y_0). #qedhere $
 ]
+
+#theorem[
+  The normal vector wrt a surface that is defined by $vb(r) (u, v)$ is $pdv(vb(r), u)  times pdv(vb(r), v)$, where $vb(r)$ is a 3D vector.
+]<thm:normal-vector-cross>
+
+#proof[
+  Notice that $pdv(vb(r), v)$ and $pdv(vb(r), u)$ are both tangent to surface. Thus, their cross product is normal to the surface. 
+]
