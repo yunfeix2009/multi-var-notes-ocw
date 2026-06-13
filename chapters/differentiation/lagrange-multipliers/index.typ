@@ -62,5 +62,5 @@ Now we examine a relatively more involved example.
 
   Surprisingly (or maybe not), the projection of the apex to the x-y plane is the given triangle's incenter!
 
-  With this fact, the computation to obtain an explicit formula becomes pedantic, which I shall omit. 
+  With this fact, the computation to obtain an explicit formula becomes pedantic. Ultimately, $f >= 1/2 sqrt( 4A^2 + (a+b+c)^2h^2)  = A + √(A^2 + ((3V P)/(2A))^2)$ 
 ]
