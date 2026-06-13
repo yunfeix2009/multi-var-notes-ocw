@@ -57,7 +57,7 @@ Changing the order of integration is a crucial technique in solving double integ
 #solution[
   Notice that there is no easy way to integrate $integral_x^sqrt(x) e^y / y dif y$. However, we could swap the bounds, $ integral_0^1 integral_x^sqrt(x) e^y/y dif y dif x &= integral_0^1 integral_(y^2)^y e^y/y dif x dif y
   \ &= integral_0^1 (e^y - y e^y) dif y
-  \ & = lr((2 e^y - y e^y)) |_0^1
+  \ & = lr((2 e^y - y e^y) |)_0^1
   \ &= e-2. $
 ]
 #remark[

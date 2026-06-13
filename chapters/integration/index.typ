@@ -10,3 +10,7 @@ Here, we examine the concepts of integration for functions with more than one va
 #chapter-section("polar-coordinates")[
   #include "polar-coordinates/index.typ"
 ]
+
+#chapter-section("double-int-application")[
+  #include "double-int-application/index.typ"
+]
