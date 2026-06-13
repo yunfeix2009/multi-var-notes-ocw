@@ -14,7 +14,7 @@ As a way to compute double integrals without doing the summation, we consider th
 
 #example[
   Let $ z=1-x^2 - y^2, R:={(x, y): 1<=x, y<=1}. $ Compute $ integral.double_R z dif x dif y. $
-]
+]<emp:3.1.2>
 #solution[
   By iterating, $ integral.double_R z dif x dif y &= integral_0^1 (integral_0^1 (1-x^2 - y^2) dif y) dif x
   \ &= integral_0^1 (1 - x^2 - 1^3/3) dif x
