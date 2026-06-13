@@ -23,10 +23,15 @@ Change of variables is a useful integration technique.
 
 In general, $ cases(dif u = u_x dif x + u_y dif y , dif v = v_x dif x + v_y dif y) ==> mat(dif u; dif v) = mat(u_x, u_y; v_x, v_y) mat(dif x; dif y). $
 
-Since linear transformations preserve collinearity, a $dif x $ by $dif y$ rectangle is mapped to a parallelogram, with area $ dif u times dif v &= ( u_x dif x + u_y dif y ) times (v_x dif x + v_y dif y) \ &= (u_x v_y - v_x u_y) dif x dif y 
-\ &= det mat(u_x, u_y; v_x, v_y) dif x dif y. $  
+Since linear transformations preserve collinearity, a $dif x $ by $dif y$ rectangle is mapped to a parallelogram, with area $ dif u times dif v &= ( u_x dif x + u_y dif y ) times (v_x dif x + v_y dif y) \ &= (u_x v_y - v_x u_y) dif x times dif y 
+\ &= det mat(u_x, u_y; v_x, v_y) dif x times dif y. $  
 
-Thus, $ dif u dif v = det mat(u_x, u_y; v_x, v_y) dif x dif y ==> dif A' = det mat(u_x, u_y; v_x, v_y) dif A. $
+#definition[
+  For differentials forms, like exterior product ( $and$ wedge) be an anti commutative ($a and b = - b and a$) and associative product between differentials that measures the oriented area in the x-y plane. 
+]
+
+
+Then, we have $ dif u and dif v = det mat(u_x, u_y; v_x, v_y) dif x and dif y ==> dif A' = det mat(u_x, u_y; v_x, v_y) dif A. $
 
 #definition[
   Define _jacobian_ of $u$ and $v$ wrt $x$ and $y$ to be $ bold(J) = (partial(u, v))/(partial (x, y)) = abs(mat(u_x, u_y; v_x, v_y)). $
@@ -55,6 +60,9 @@ Here, we will work out another example purely for practice.
 
 #solution[
   We first compute the jacobian: $ bold(J) &= abs(mat(u_x, u_y; v_x, v_y)) \ &= abs( mat( 1, 0; y, x)) \ &= x. $
+
+Notice that here, everything is positve, so we do not have to concern about the sign of $bold(J)$. 
+
   Thus, $ integral_0^1 integral_0^1 x^2 y dif x dif y &= integral_0^1 integral_0^1 (u v)/ x dif u dif v
   \ &= integral_0^1 integral_0^1 v dif u dif v 
   \ &= integral_0^1 v dif v

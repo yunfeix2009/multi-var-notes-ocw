@@ -18,3 +18,7 @@ Here, we examine the concepts of integration for functions with more than one va
 #chapter-section("change-of-variables")[
   #include "change-of-variables/index.typ"
 ]
+
+#chapter-section("line-integrals")[
+  #include "line-integrals/index.typ"
+]

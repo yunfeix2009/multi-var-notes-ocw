@@ -21,6 +21,13 @@
 #if not _is-html {
   oldpagebreak()
 }
+
+#chapter-section("vector-fields")[
+  #include "vector-fields/index.typ"
+]
+#if not _is-html {
+  oldpagebreak()
+}
 // appendix
 
 #set heading(numbering: "A.1")
