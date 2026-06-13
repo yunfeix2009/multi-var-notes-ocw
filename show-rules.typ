@@ -75,7 +75,7 @@
       if level == 1 {
         [Chapter ] + counter(heading).display() + [: ]
       } else if level <= 6 {
-        counter(heading).display() + [ ]
+        [§] + counter(heading).display() + [ ]
       }
     }
     let label-id = if it.has("label") { str(it.label) } else { none }
