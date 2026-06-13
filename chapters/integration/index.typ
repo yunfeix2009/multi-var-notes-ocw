@@ -14,3 +14,7 @@ Here, we examine the concepts of integration for functions with more than one va
 #chapter-section("double-int-application")[
   #include "double-int-application/index.typ"
 ]
+
+#chapter-section("change-of-variables")[
+  #include "change-of-variables/index.typ"
+]

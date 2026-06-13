@@ -19,6 +19,7 @@
 #let _ams-example = example
 #let _ams-claim = claim
 #let _ams-proof = proof
+#let _ams-solution = solution
 
 #let _is-html = sys.inputs.at("html", default: "false") == "true"
 
@@ -89,6 +90,20 @@
   })
 }
 
+#let _html-solution-fmt(head) = thm => {
+  let title = if thm.name != none {
+    [#head #thm.name]
+  } else {
+    [#head]
+  }
+
+  html.elem("details", attrs: (class: "thm-solution"), {
+    html.elem("summary", html.elem("em", [#title.]))
+    thm.body
+    html.elem("p", attrs: (class: "qed"), [$square$])
+  })
+}
+
 #let theorem = if _is-html {
   _html-thm-env(_ams-theorem, "Theorem", "thm-theorem")
 } else {
@@ -153,6 +168,12 @@
   _ams-proof.with(fmt: _html-proof-fmt("Proof"))
 } else {
   _ams-proof
+}
+
+#let solution = if _is-html {
+  _ams-solution.with(fmt: _html-solution-fmt("Solution"))
+} else {
+  _ams-solution
 }
 
 #if _is-html {
