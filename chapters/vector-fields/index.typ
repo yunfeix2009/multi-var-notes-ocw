@@ -14,3 +14,7 @@ Here, we examine the concepts of vector fields using techniques developed from d
 #chapter-section("curl")[
   #include "curl/index.typ"
 ]
+
+#chapter-section("green")[
+  #include "green/index.typ"
+]
