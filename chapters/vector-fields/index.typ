@@ -10,3 +10,7 @@ Here, we examine the concepts of vector fields using techniques developed from d
 #chapter-section("conservative-fields")[
   #include "conservative-fields/index.typ"
 ]
+
+#chapter-section("curl")[
+  #include "curl/index.typ"
+]
