@@ -36,7 +36,7 @@ Similar to how Green's Theorem provides a double integral based method to comput
 ]
 
 #theorem[
-  Green's Theorem in normal form states that for a closed curve $c$ enclosing region $R$ then for vector field $vb(F)$, $ integral.cont_c vb(F) dot vu(n) dif s = integral.double_R op("div") (vb(F)) dif A. $
+  Green's Theorem in normal form states that for a closed curve $c$ enclosing region $R$ then for vector field $vb(F)$ that is defined and is differentiable on $R$, $ integral.cont_c vb(F) dot vu(n) dif s = integral.double_R op("div") (vb(F)) dif A. $
 ]
 #proof[
   The proof here assumes Green's Theorem in tangential form. 

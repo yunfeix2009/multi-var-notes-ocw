@@ -22,3 +22,7 @@ Here, we examine the concepts of vector fields using techniques developed from d
 #chapter-section("flux")[
   #include "flux/index.typ"
 ]
+
+#chapter-section("simply-connected-regions")[
+  #include "simply-connected-regions/index.typ"
+]

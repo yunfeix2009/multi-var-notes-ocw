@@ -5,7 +5,7 @@
 To find the work along a closed curve, if the force field is not conservative, Green's Theorem is an alternative for direct computation. Rather than evaluating a line integral, Green's Theorem brings up the dimension by one and converts it to a double integral that is sometimes easier to evaluate. 
 
 #theorem[
-  Green's Theorem (in tangential form) states that, for a closed, counterclockwise curve $c$ that encloses a region $R$, fix a vector field $vb(F) = (M, N)$, then the work $ integral.cont_c vb(F) dot vb(r) = integral.double_R op("curl") (vb(F)) dif A = integral.double_R . $
+  Green's Theorem (in tangential form) states that, for a closed, counterclockwise curve $c$ that encloses a region $R$, fix a vector field $vb(F) = (M, N)$ that is defined and is differentiable on $R$, then the work $ integral.cont_c vb(F) dot vb(r) = integral.double_R op("curl") (vb(F)) dif A = integral.double_R . $
   In other words, $ integral.cont_c M dif x + N dif y = integral.double_R N_x - M_y dif A. $
 ]<thm:green>
 #remark[
