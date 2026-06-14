@@ -6,3 +6,7 @@ Here, we examine the concepts of vector fields using techniques developed from d
 #chapter-section("fundamentals-vector-field")[
   #include "fundamentals/index.typ"
 ]
+
+#chapter-section("conservative-fields")[
+  #include "conservative-fields/index.typ"
+]
