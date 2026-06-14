@@ -22,3 +22,7 @@ Here, we examine the concepts of integration for functions with more than one va
 #chapter-section("line-integrals")[
   #include "line-integrals/index.typ"
 ]
+
+#chapter-section("triple-integrals")[
+  #include "triple-integrals/index.typ"
+]
