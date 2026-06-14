@@ -18,3 +18,7 @@ Here, we examine the concepts of vector fields using techniques developed from d
 #chapter-section("green")[
   #include "green/index.typ"
 ]
+
+#chapter-section("flux")[
+  #include "flux/index.typ"
+]
