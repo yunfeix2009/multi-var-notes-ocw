@@ -26,3 +26,7 @@ Here, we examine the concepts of integration for functions with more than one va
 #chapter-section("triple-integrals")[
   #include "triple-integrals/index.typ"
 ]
+
+#chapter-section("spherical-coordinates")[
+  #include "spherical-coordinates/index.typ"
+]
