@@ -12,3 +12,7 @@ Notice that the curl is $0$ iff $vb(F)$ is conservative.
 For a velocity field, _curl_ measures the rotation component of motion at given point. One could verify this through testing the constant vector field, radial vector field, and show that they have $0$ curl. In fact, curl measure twice the angular velocity at a given point. 
 
 For a force field, _curl_ measure the torque exerted on a point per unit inertia at that given point. 
+
+=== Curl in Space 
+From now on, we will consider curl in $RR^3$. 
+

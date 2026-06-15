@@ -61,3 +61,26 @@ Here we present an example of using Green's Theorem to find the flux by providin
 ]
 
 In fact, similar to how curl roughly measure how much a field is "rotating" at a certain point, divergence roughly measure how much the flow is expanding at a certain point. 
+
+
+=== Flux in Space 
+From now on, we will consider flux in $RR^3$. 
+
+Rather than considering how much liquid is flowing "through" a curve, we consider how much liquid a flowing through a surface. 
+#definition[
+Formally, for a vector field $vb(F)$ and surface $S$, let $vu(n)$ represent the unit normal vector wrt $S$ at a certain point, the flux of $ vb(F)$ is $ integral.surf_S vb(F) dot vu(n) dif S. $ ]
+
+There is one thing that must be taken care of. In 2D flux, the convention deems the normal to the right of a moving point on the curve as positive; however, on a surface, it must be stated explicitly which of the two normal vectors is taken as positive, which is termed "orientation" of the surface. Usually, the direction pointing out of the surface is taken as positive.  
+
+As a notation, $dif (vb(S)) = vu(n) dot vb(S)$. 
+
+#example[
+  Fix vector field $vb(F) = (x, y, z)$, find the flux through the unit sphere centered at the origin. 
+]
+#solution[
+  For a point $(x_0, y_0, z_0)$ on the unit sphere, $vu(n) = (x_0, y_0, z_0)$. Thus, let $S$ be the surface of the unit sphere, the flux is $ integral.surf_S vb(F) dot vu(n) dif S &= integral.surf_S (x, y, z) dot (x, y, z) dif S 
+  \ &= integral.surf_S x^2 + y^2 + z^2 dif S 
+  \ &= integral.surf_S dif S 
+  \ &= op("area") 
+  \ &= 4 pi. #qedhere $
+]
