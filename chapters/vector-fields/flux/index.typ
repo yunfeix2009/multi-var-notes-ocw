@@ -213,8 +213,36 @@ Now, we explain the previous suspicious-looking $4/3 pi a^3$, see <emp:motivatin
 
 === Diffusion Equations
 
-One consequential application of the Divergence Theorem is in solving diffusion equations, that governs how some substance "spread out" when situated in a fluid. 
+One consequential application of the Divergence Theorem is in solving diffusion equations, that governs how some substance "spread out" when situated in a static fluid. 
 
 Some examples of diffusion are smoke in the air, dye in water, and heat (see @eq:heat). 
 
-To model this, let the concentration at a given point $(x, y, z)$ and time $t$ be $u(x, y, z, t)$. If the starting concentration is described by $pdv(u, x), pdv(u, y), pdv(u,z)$, we aim to find how the concentration at a point changes through time, $pdv(u, t)$. 
+To model this, let the concentration at a given point $(x, y, z)$ and time $t$ be $u(x, y, z, t)$. 
+#theorem[
+  If the starting concentration is described by $pdv(u, x), pdv(u, y), pdv(u,z)$, we aim to find how the concentration at a point changes through time, $pdv(u, t)$. 
+
+$ pdv(u, t) = k (pdv(u, x, 2) + pdv(u, y, 2) + pdv(u, z, 2)). $
+] 
+#definition[
+Define operator laplacian (del, says Denis) $ Delta u = nabla^2 u = nabla dot nabla u, $
+]
+then $ pdv(u, t) = k nabla^2 u. $
+
+#proof[
+  Let $vb(F)$ denote the flow of the substance, say dye being defused, since dye flows from high concentration to low concentration, $ op("dir")(vb(F)) = op("dir") (- nabla u). $
+
+  Here we invoke a result from thermodynamics that $vb(F)$ is proportional to $- nabla u$, that makes sense from dimensional analysis. Thus, $ vb(F) = - k nabla u. $
+
+  To relate $vb(F)$ and $pdv(u, t)$, we consider a region $D$ in space with boundary $S$. The flux out of $D$ through $S$ is $ integral.surf_S vb(F) dot vu(n) dif S = - dv(, t) (integral.triple_D u dif V) $
+
+  However, with the Divergence Theorem, $ integral.surf_S vb(F) dot vu(n) dif S &= integral.triple_D nabla dot vb(F) dif V. $
+  So, $ integral.triple_D op("div") vb(F) dif V &= - dv(, t) integral.triple_D u dif V 
+  \ &= integral.triple - pdv(u, t) dif V. $
+  Notice that taking the differential operator could be taken into the integrals as $(u + v)' = u' + v'$. 
+
+  Since this equation is true for any region $D$, $ div vb(F) = - pdv(u, t). $
+
+  So, $
+  pdv(u, t) = - div vb(F) = - k nabla^2 u. 
+  $
+]
