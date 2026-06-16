@@ -59,54 +59,54 @@
   ]
 + In Physics, when dealing with force, dot  product is often critical.
   #example[
-    // #let is-html = sys.inputs.at("html", default: "false") == "true"
-    // #let boat-image = image("/assets/image.png", width: 100%)
+    #let is-html = sys.inputs.at("html", default: "false") == "true"
+    #let boat-image = image("/assets/image.png", width: 100%)
 
-    // #if is-html [
-    //   #html.elem("div", attrs: (class: "boat-reflow"), {
-    //     html.elem("div", attrs: (class: "boat-reflow-text"), [
-    //       Background: By carefully positioning the sail the boat can be made to sail
-    //       into the wind – this process is called _tacking_.
+    #if is-html [
+      #html.elem("div", attrs: (class: "boat-reflow"), {
+        html.elem("div", attrs: (class: "boat-reflow-text"), [
+          Background: By carefully positioning the sail the boat can be made to sail
+          into the wind – this process is called _tacking_.
 
-    //       Described mathematically, the wind vector is first projected onto the
-    //       perpendicular to the sail to obtain the direction of the force on the sail.
-    //       This resultant force is then projected onto the axis of the boat to determine
-    //       the direction in which the boat is being pushed. By orienting the sail
-    //       correctly, this double projection can result in a vector with a component
-    //       pointing into the wind.
+          Described mathematically, the wind vector is first projected onto the
+          perpendicular to the sail to obtain the direction of the force on the sail.
+          This resultant force is then projected onto the axis of the boat to determine
+          the direction in which the boat is being pushed. By orienting the sail
+          correctly, this double projection can result in a vector with a component
+          pointing into the wind.
 
-    //       In the figure, $bold(w) = a bold(i)$ is the wind direction. The line $l_s$
-    //       is perpendicular to the sail $(0 <= alpha < pi/2)$, and the line $l_B$ lies
-    //       along the boat's axis $(0 <= beta < pi/2)$.
-    //     ])
-    //     html.elem("div", attrs: (class: "boat-reflow-figure"), [
-    //       #boat-image
-    //     ])
-    //   })
-    // ] else [
-    //   #let image1 = image("/assets/image.png", width: 53%)
-    //   #reflow({
-    //     placed(horizon + right, dy: -6.7cm, dx: 3%, image1)
+          In the figure, $bold(w) = a bold(i)$ is the wind direction. The line $l_s$
+          is perpendicular to the sail $(0 <= alpha < pi/2)$, and the line $l_B$ lies
+          along the boat's axis $(0 <= beta < pi/2)$.
+        ])
+        html.elem("div", attrs: (class: "boat-reflow-figure"), [
+          #boat-image
+        ])
+      })
+    ] else [
+      #let image1 = image("/assets/image.png", width: 53%)
+      #reflow({
+        placed(horizon + right, dy: -6.7cm, dx: 3%, image1)
 
-    //     container()
-    //     content[
-    //       #set par(justify: true)
-    //       Background: By carefully positioning the
-    //       sail the boat can be made to sail into the wind – this process is called _tacking_.
+        container()
+        content[
+          #set par(justify: true)
+          Background: By carefully positioning the
+          sail the boat can be made to sail into the wind – this process is called _tacking_.
 
-    //       Described mathematically, the wind vector is first projected onto the
-    //       perpendicular to the sail to obtain the direction of the force on the sail.
-    //       This resultant force is then projected onto the axis of the boat to determine
-    //       the direction in which the boat is being pushed. By orienting the sail
-    //       correctly, this double projection can result in a vector with a component
-    //       pointing into the wind.
+          Described mathematically, the wind vector is first projected onto the
+          perpendicular to the sail to obtain the direction of the force on the sail.
+          This resultant force is then projected onto the axis of the boat to determine
+          the direction in which the boat is being pushed. By orienting the sail
+          correctly, this double projection can result in a vector with a component
+          pointing into the wind.
 
-    //       In the figure, $bold(w) = a bold(i)$ is the wind direction. The line $l_s$
-    //       is perpendicular to the sail $(0 <= alpha < pi/2)$, and the line $l_B$ lies
-    //       along the boat's axis $(0 <= beta < pi/2)$.
-    //     ]
-    //   })
-    // ]
+          In the figure, $bold(w) = a bold(i)$ is the wind direction. The line $l_s$
+          is perpendicular to the sail $(0 <= alpha < pi/2)$, and the line $l_B$ lies
+          along the boat's axis $(0 <= beta < pi/2)$.
+        ]
+      })
+    ]
     a) Let $bold(w)_1$ be the projection of $bold(w)$ onto the line $l_s$.
     Show that $bold(w)_1$ does not have a non-zero component in the
     direction opposite $bold(w)$. (It is sufficient to show the projections
