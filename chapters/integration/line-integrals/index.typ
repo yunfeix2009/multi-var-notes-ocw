@@ -57,10 +57,10 @@ Like in $RR^2$, if we can parametrize $c$, the line integral could be evaluated 
 ]
 
 #remark[
-  In fact, $vb(F)$ is conservative -- it is the gradient field of $f = x y z$. So, work is $f(1, 1, 1) - f(0, 0, 0) = 1$. 
+  In fact, $vb(F)$ is conservative---it is the gradient field of $f = x y z$. So, work is $f(1, 1, 1) - f(0, 0, 0) = 1$. 
 ]
 
-In general, to test whether a vector field in $RR^3$ is a gradient field, we have the follow criterion. Fix $vb(F)$ (defined and differentiable on its domain ), it has potential function $f$ iff $vb(F) = (P, Q, R) = (f_x, f_y, f_z)$. This is true only if $ cases(P_y = f_(x y) = f_(y x)= Q_x, Q_z = f_(y z) = f_(z y) = R_y, Q_x = f_(z x) = f_(x, z) = P_z). $
+In general, to test whether a vector field in $RR^3$ is a gradient field, we have the follow criterion. Fix $vb(F)$ (defined and differentiable on its domain ), it has potential function $f$ iff $vb(F) = (P, Q, R) = (f_x, f_y, f_z)$. This is true only if $ cases(P_y = f_(x y) = f_(y x)= Q_x, Q_z = f_(y z) = f_(z y) = R_y, Q_x = f_(z x) = f_(x z) = P_z). $
 
 #definition[
   A differential $P dif x + Q dif y + R dif z$ is _exact_ iff there exists a function $f$ such that $ dif f =P dif x + Q dif y + R dif z. $

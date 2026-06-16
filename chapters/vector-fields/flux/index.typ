@@ -1,4 +1,4 @@
-#import "../../../lib.typ": *
+#import "/lib.typ": *
 == Flux
 
 We first examine flux in two dimensions, namely in the $x-y$ plane.
@@ -70,7 +70,8 @@ From now on, we will consider flux in $RR^3$.
 
 Rather than considering how much liquid is flowing "through" a curve, we consider how much liquid a flowing through a surface.
 #definition[
-  Formally, for a vector field $vb(F)$ and surface $S$, let $vu(n)$ represent the unit normal vector wrt $S$ at a certain point, the flux of $vb(F)$ is $ integral.surf_S vb(F) dot vu(n) dif S. $ ]
+  Formally, for a vector field $vb(F)$ and surface $S$, let $vu(n)$ represent the unit normal vector wrt $S$ at a certain point, the flux of $vb(F)$ is $ integral.surf_S vb(F) dot vu(n) dif S. $
+]
 
 There is one thing that must be taken care of. In 2D flux, the convention deems the normal to the right of a moving point on the curve as positive; however, on a surface, it must be stated explicitly which of the two normal vectors is taken as positive, which is termed "orientation" of the surface. Usually, the direction pointing out of the surface is taken as positive.
 
@@ -80,11 +81,14 @@ As a notation, $dif (vb(S)) = vu(n) dot vb(S)$.
   Fix vector field $vb(F) = (x, y, z)$, find the flux through the unit sphere centered at the origin.
 ]
 #solution[
-  For a point $(x_0, y_0, z_0)$ on the unit sphere, $vu(n) = (x_0, y_0, z_0)$. Thus, let $S$ be the surface of the unit sphere, the flux is $ integral.surf_S vb(F) dot vu(n) dif S & = integral.surf_S (x, y, z) dot (x, y, z) dif S \
-                                        & = integral.surf_S x^2 + y^2 + z^2 dif S \
-                                        & = integral.surf_S dif S \
-                                        & = op("area") \
-                                        & = 4 pi. #qedhere $
+  For a point $(x_0, y_0, z_0)$ on the unit sphere, $vu(n) = (x_0, y_0, z_0)$. Thus, let $S$ be the surface of the unit sphere, the flux is
+  $
+    integral.surf_S vb(F) dot vu(n) dif S & = integral.surf_S (x, y, z) dot (x, y, z) dif S \
+                                          & = integral.surf_S x^2 + y^2 + z^2 dif S \
+                                          & = integral.surf_S dif S \
+                                          & = op("area") \
+                                          & = 4 pi. #qedhere
+  $
 ]
 
 #example[
@@ -92,14 +96,20 @@ As a notation, $dif (vb(S)) = vu(n) dot vb(S)$.
 ]<emp:motivatingDivergence>
 
 #solution[
-  Flux is $ integral.surf_S vb(H) dot (x, y, z)/a dif S &= integral.surf_S z^2/a dif S
-  // \ &= integral.triple_R
-  \ &= 1/a integral_0^(2pi) integral_0^pi (a cos Phi)^2 a^2 sin Phi dif Phi dif theta
-  \ &= a^3 integral_0^(2pi) integral_0^pi cos^2 Phi sin Phi dif Phi dif theta. $
+  Flux is
+  $
+    integral.surf_S vb(H) dot (x, y, z)/a dif S &= integral.surf_S z^2/a dif S \
+    // \ &= integral.triple_R
+    &= 1/a integral_0^(2pi) integral_0^pi (a cos Phi)^2 a^2 sin Phi dif Phi dif theta \
+    &= a^3 integral_0^(2pi) integral_0^pi cos^2 Phi sin Phi dif Phi dif theta.
+  $
   Let $u:= cos Phi$, $dif u = - sin Phi dif Phi$, then $ integral cos^2 Phi sin Phi dif Phi & = - u^3/3 + C \
                                      & = - (cos Phi)^3/3 + C. $
-  So, flux becomes $ a^3 integral_0^(2pi) lr([- (cos Phi)^3/3] |)^pi_0 dif theta & = 2 pi a^3 lr([- (cos Phi)^3/3] |)^pi_0 \
-                                                              & = 4/3 pi a^3 $
+  So, flux becomes
+  $
+    a^3 integral_0^(2pi) lr([- (cos Phi)^3/3] |)^pi_0 dif theta & = 2 pi a^3 lr([- (cos Phi)^3/3] |)^pi_0 \
+                                                                & = 4/3 pi a^3
+  $
 ]
 #remark[
   Be careful not to assume $dif S = dif Phi dif theta$.
@@ -123,8 +133,8 @@ $
 #example[
   Flux of $vb(F) = z vu(k)$ through the portion of $z = x^2 + y^2$ that lies above the unit disc.
 ]
-#example[
-  Flus is $ integral.double_S vb(F) dot dif vb(S) & =
+#solution[
+  Flux is $ integral.double_S vb(F) dot dif vb(S) & =
                                           integral.double_DD z vu(k) dot (-2x, -2y, 1) dif x dif y \
                                         & = integral.double_DD z dif x dif y \
                                         & = integral.double_DD x^2 + y^2 dif x dif y \
@@ -167,37 +177,30 @@ Now that we have discussed how to compute surface integrals, we consider how to 
 First, we looks at what is divergence.
 
 
-Similar to $op("curl") vb(F) = nabla times vb(F)$, if $f(x, y, z) = (P, Q, R)$, then $ nabla dot f = (pdv(P, x), pdv(Q, y), pdv(R, z)) = op("div") f. $
+Similar to $op("curl") vb(F) = curl vb(F)$, if $f(x, y, z) = (P, Q, R)$, then $ div f = (pdv(P, x), pdv(Q, y), pdv(R, z)) = op("div") f. $
 #theorem[
   The Divergence Theorem (sometimes referred to as the Gauss-Green Theorem) states that, for a simply connected, bounded region $D$, with surface $S$ and a function defined and differentiable on it, $vb(F)$, then
   $ integral.surf_S vb(F) dot dif vb(S) = integral.triple_D op("div") vb(F) div V, $
   where $op("div") (P vu(i) + Q vu(j) + R vu(k)) = P_x + Q_y + R_k.$
 ]
 #proof[
-  Like how the Divergence Theorem is a generalization of the two-variable Green's Theorem in normal form, our proof's shall follow the same outline. First observe that it suffices to show one component, here we pick $z$, or $ integral.surf_S R dot dif vb(S) &= integral.triple_D nabla dot R dif V 
-  \ &= integral.triple_D R_z dif V.
-   $
-  Next, notice that the flux of a region is equal to the sum of the flux of two sub-regions whose union is the original region. Therefore, it suffices to consider one of these sub-regions that is vertically simple, meaning that its bottom surface is $z = z_1(x, y)$ and the top is a surface $z = z_2(x, y)$, else bounded by vertical faces. 
+  Like how the Divergence Theorem is a generalization of the two-variable Green's Theorem in normal form, our proof's shall follow the same outline. First observe that it suffices to show one component, here we pick $z$, or $ integral.surf_S R dot dif vb(S) & = integral.triple_D nabla dot R dif V \
+                                  & = integral.triple_D R_z dif V. $
+  Next, notice that the flux of a region is equal to the sum of the flux of two sub-regions whose union is the original region. Therefore, it suffices to consider one of these sub-regions that is vertically simple, meaning that its bottom surface is $z = z_1(x, y)$ and the top is a surface $z = z_2(x, y)$, else bounded by vertical faces.
 
-  Fix one such region $D$, projecting $U$ onto the $x-y$ plane, we have $
-    integral.triple_D R_z dif V &= integral.double_U (integral_(z_1(x, y))^(z_2(x, y)) R_z dif z) dif A 
-    \ &= integral.double_U (R(x, y, z_1(x, y)), R(x, y, z_2(x, y))) dif A
-  $
+  Fix one such region $D$, projecting $U$ onto the $x-y$ plane, we have $ integral.triple_D R_z dif V & = integral.double_U (integral_(z_1(x, y))^(z_2(x, y)) R_z dif z) dif A \
+                              & = integral.double_U (R(x, y, z_1(x, y)), R(x, y, z_2(x, y))) dif A $
 
-  On the other hand, since $
-    dif vb(S) = (- pdv(z, x), - pdv(z, y), 1) dif x dif y
-  $, the left side of the theorem becomes $
-    integral.surf_S R dot dif vb(S) = integral.surf_"top" R dot dif vb(S) + integral.surf_"bottom" R dot dif vb(S) + integral.surf_"sides" R dot dif vb(S) 
-    \ &= integral.surf_U R dot (- pdv(z_2, x), - pdv(z_2, y), 1) dif x dif y + integral.surf_U R dot -(- pdv(z_1, x), - pdv(z_1, y), 1) dif x dif y + 0 
-    \ &= integral.surf_U R dif x dif y - integral.surf_U R dif x dif y 
-    \ &= integral.surf_U R(x, y, z_2(x, y)) dif x dif y - integral.surf_U R(x, y, z_1(x, y)) dif x dif y 
-    \ &= integral.double_U (R(x, y, z_1(x, y)), R(x, y, z_2(x, y))) dif A
-    \ &= integral.triple_D R_z dif V. #qedhere
-  $
+  On the other hand, since $ dif vb(S) = (- pdv(z, x), - pdv(z, y), 1) dif x dif y $, the left side of the theorem becomes $ integral.surf_S R dot dif vb(S) = integral.surf_"top" R dot dif vb(S) + integral.surf_"bottom" R dot dif vb(S) + integral.surf_"sides" R dot dif vb(S)
+  \ &= integral.surf_U R dot (- pdv(z_2, x), - pdv(z_2, y), 1) dif x dif y + integral.surf_U R dot -(- pdv(z_1, x), - pdv(z_1, y), 1) dif x dif y + 0
+  \ &= integral.surf_U R dif x dif y - integral.surf_U R dif x dif y
+  \ &= integral.surf_U R(x, y, z_2(x, y)) dif x dif y - integral.surf_U R(x, y, z_1(x, y)) dif x dif y
+  \ &= integral.double_U (R(x, y, z_1(x, y)), R(x, y, z_2(x, y))) dif A
+  \ &= integral.triple_D R_z dif V. #qedhere $
 
 ]
 #remark[
-  In general, in order to apply Divergence to a region that is not simply connected, we decompose the region into simply connected regions. 
+  In general, in order to apply Divergence to a region that is not simply connected, we decompose the region into simply connected regions.
 ]
 
 Now, we explain the previous suspicious-looking $4/3 pi a^3$, see <emp:motivatingDivergence>, with Divergence Theorem.
@@ -213,18 +216,18 @@ Now, we explain the previous suspicious-looking $4/3 pi a^3$, see <emp:motivatin
 
 === Diffusion Equations
 
-One consequential application of the Divergence Theorem is in solving diffusion equations, that governs how some substance "spread out" when situated in a static fluid. 
+One consequential application of the Divergence Theorem is in solving diffusion equations, that governs how some substance "spread out" when situated in a static fluid.
 
-Some examples of diffusion are smoke in the air, dye in water, and heat (see @eq:heat). 
+Some examples of diffusion are smoke in the air, dye in water, and heat (see @emp:heat).
 
-To model this, let the concentration at a given point $(x, y, z)$ and time $t$ be $u(x, y, z, t)$. 
+To model this, let the concentration at a given point $(x, y, z)$ and time $t$ be $u(x, y, z, t)$.
 #theorem[
-  If the starting concentration is described by $pdv(u, x), pdv(u, y), pdv(u,z)$, we aim to find how the concentration at a point changes through time, $pdv(u, t)$. 
+  If the starting concentration is described by $pdv(u, x), pdv(u, y), pdv(u, z)$, we aim to find how the concentration at a point changes through time, $pdv(u, t)$.
 
-$ pdv(u, t) = k (pdv(u, x, 2) + pdv(u, y, 2) + pdv(u, z, 2)). $
-] 
+  $ pdv(u, t) = k (pdv(u, x, 2) + pdv(u, y, 2) + pdv(u, z, 2)). $
+]
 #definition[
-Define operator laplacian (del, says Denis) $ Delta u = nabla^2 u = nabla dot nabla u, $
+  Define operator Laplacian (del, says Denis) $ Delta u = nabla^2 u = nabla dot nabla u, $
 ]
 then $ pdv(u, t) = k nabla^2 u. $
 
@@ -235,14 +238,12 @@ then $ pdv(u, t) = k nabla^2 u. $
 
   To relate $vb(F)$ and $pdv(u, t)$, we consider a region $D$ in space with boundary $S$. The flux out of $D$ through $S$ is $ integral.surf_S vb(F) dot vu(n) dif S = - dv(, t) (integral.triple_D u dif V) $
 
-  However, with the Divergence Theorem, $ integral.surf_S vb(F) dot vu(n) dif S &= integral.triple_D nabla dot vb(F) dif V. $
-  So, $ integral.triple_D op("div") vb(F) dif V &= - dv(, t) integral.triple_D u dif V 
-  \ &= integral.triple - pdv(u, t) dif V. $
-  Notice that taking the differential operator could be taken into the integrals as $(u + v)' = u' + v'$. 
+  However, with the Divergence Theorem, $ integral.surf_S vb(F) dot vu(n) dif S & = integral.triple_D nabla dot vb(F) dif V. $
+  So, $ integral.triple_D op("div") vb(F) dif V & = - dv(, t) integral.triple_D u dif V \
+                                          & = integral.triple - pdv(u, t) dif V. $
+  Notice that taking the differential operator could be taken into the integrals as $(u + v)' = u' + v'$.
 
   Since this equation is true for any region $D$, $ div vb(F) = - pdv(u, t). $
 
-  So, $
-  pdv(u, t) = - div vb(F) = - k nabla^2 u. 
-  $
+  So, $ pdv(u, t) = - div vb(F) = - k nabla^2 u. $
 ]

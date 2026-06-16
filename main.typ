@@ -34,7 +34,7 @@
           Typst Source: https://github.com/yunfeix2009/multi-var-notes-ocw
         ]
         #html.elem("p", attrs: (class: "pdf-download"))[
-          #html.elem("a", attrs: (href: "../pdf/multi-var-notes.pdf", class: "btn-pdf"))[
+          #html.elem("a", attrs: (href: "../pdf/notes.pdf", class: "btn-pdf"))[
             Download PDF
           ]
         ]

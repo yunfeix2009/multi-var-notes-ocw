@@ -33,7 +33,7 @@ DIST_DIR = WEB_DIR / "dist"
 ASSETS_SRC = WEB_DIR / "assets"
 
 THESIS_TITLE = "Notes on Multivariable Calculus"
-GITHUB_URL = "https://yunfeix2009.github.io/multi-var-notes-ocw/"
+GITHUB_URL = "https://github.com/yunfeix2009/multi-var-notes-ocw/"
 BASE_URL = "/"  # overridden by --base-url CLI arg
 HEADING_TAGS = {"h2", "h3", "h4", "h5", "h6"}
 
