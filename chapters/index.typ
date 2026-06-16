@@ -38,3 +38,7 @@
 #chapter-section("appendix-2")[
   #include "/chapters/appendix-2/index.typ"
 ]
+
+#chapter-section("appendix-3")[
+  #include "/chapters/appendix-3/index.typ"
+]
