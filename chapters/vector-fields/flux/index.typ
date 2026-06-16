@@ -165,9 +165,9 @@ To verify this method, we will use it to show the formula we had when $z$ is exp
 Now that we have discussed how to compute surface integrals, we consider how to avoid them, with Divergence Theorem.
 
 First, we looks at what is divergence.
-With mild abuse of notations, by treating nabla as a vector of operations, $ nabla = (pdv(, x), pdv(, y), pdv(, z)) , $ and treating a function $f$ as a scalar, $ nabla f = (pdv(f, x), pdv(f, y), pdv(f, z)). $
 
-Taking this further, if $f(x, y, z) = (P, Q, R)$, then $ nabla dot f = (pdv(P, x), pdv(Q, y), pdv(R, z)) = op("div") f. $
+
+Similar to $op("curl") vb(F) = nabla times vb(F)$, if $f(x, y, z) = (P, Q, R)$, then $ nabla dot f = (pdv(P, x), pdv(Q, y), pdv(R, z)) = op("div") f. $
 #theorem[
   The Divergence Theorem (sometimes referred to as the Gauss-Green Theorem) states that, for a simply connected, bounded region $D$, with surface $S$ and a function defined and differentiable on it, $vb(F)$, then
   $ integral.surf_S vb(F) dot dif vb(S) = integral.triple_D op("div") vb(F) div V, $

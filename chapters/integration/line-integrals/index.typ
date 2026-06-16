@@ -38,3 +38,36 @@ There is a catch, though, that $M$ and $N$ are dependent on both $x$ and $y$. Bu
 ]
 
 Often, it is useful to think about the geometric relationship between $vb(F)$ and $vb(r)$. For example, the lorenz force always do $0$ work as it is always perpendicular to the trajectory. 
+
+=== Line Integrals in Space 
+Now, we generalize line integrals from $RR^2$ to $RR^3$. 
+
+For a vector field $vb(F) = P vu(i) + vu(j) + vu(k)$ and a curve $c$, work is $ integral_c bold(F) dot dif vb(r), $ where $r = x vu(i) + y vu(j) + z vu(z)$. 
+
+Like in $RR^2$, if we can parametrize $c$, the line integral could be evaluated rather directly. 
+
+#example[
+  Fix curve $c$ to be moving from $(0, 0, 0)$ to $(1, 0, 0)$ to $(1, 1, 0)$ to $(1, 1, 1)$ and $vb(F) = y z dif x + x z dif y + x y dif z$. Compute the work done by $vb(F)$ for a point moving along $c$. 
+]
+#solution[
+  Split $c$ naturally to $c_1$, $c_2$, and $c_3$, then $ integral_c = integral_c_1 + integral_c_2 + integral_c_3. $
+
+  Notice that along $c_1$ and $c_2$, $z = 0$ and $dif z = 0$. Thus, $ integral_c_1 vb(F) dot dif vb(r) = integral_c_2 vb(F) dot dif vb(r) = 0. $ 
+  For $c_3$, $ integral_c_3 vb(F) dot dif vb(r) = integral x y dif z = integral_0^1 dif z = 1. $
+]
+
+#remark[
+  In fact, $vb(F)$ is conservative -- it is the gradient field of $f = x y z$. So, work is $f(1, 1, 1) - f(0, 0, 0) = 1$. 
+]
+
+In general, to test whether a vector field in $RR^3$ is a gradient field, we have the follow criterion. Fix $vb(F)$ (defined and differentiable on its domain ), it has potential function $f$ iff $vb(F) = (P, Q, R) = (f_x, f_y, f_z)$. This is true only if $ cases(P_y = f_(x y) = f_(y x)= Q_x, Q_z = f_(y z) = f_(z y) = R_y, Q_x = f_(z x) = f_(x, z) = P_z). $
+
+#definition[
+  A differential $P dif x + Q dif y + R dif z$ is _exact_ iff there exists a function $f$ such that $ dif f =P dif x + Q dif y + R dif z. $
+]<def:curl3D>
+Notice that a vector field $vb(F) (P, Q, R)$ is conservative iff $P dif x + Q dif y+ R dif z$ is _exact_. 
+
+Given a conservative vector field $vb(F) (x, y, z)$, to find its potential $f$, one could compute three line integrals along $x$-axis, $y$-axis, and $z$-axis. 
+
+
+Alternatively, one could try to find the antiderivative wrt $x$ first, up to the integration constant, which is a function of $y$ and $z$, then integrate wrt $y$, then $z$, finally reducing the integration constant to, well, a constant. 
