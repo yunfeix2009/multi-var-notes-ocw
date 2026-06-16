@@ -4,7 +4,7 @@
 Curl is one of the most important vector field operators that has significant consequences in Physics, such as fluid dynamics.
 
 #definition[
-  For a vector field $vb(F) = (M, N)$, curl of $F$ is defined as $ op("curl")(F) = N_x - M_y. $
+  For a vector field $vb(F) = (M, N)$, curl of $F$ is defined as $ op(bold("curl"))(vb(F)) = N_x - M_y. $
 ]
 
 Notice that the curl is $0$ iff $vb(F)$ is conservative.

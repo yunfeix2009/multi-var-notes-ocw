@@ -180,7 +180,7 @@ First, we looks at what is divergence.
 Similar to $op("curl") vb(F) = curl vb(F)$, if $f(x, y, z) = (P, Q, R)$, then $ div f = (pdv(P, x), pdv(Q, y), pdv(R, z)) = op("div") f. $
 #theorem[
   The Divergence Theorem (sometimes referred to as the Gauss-Green Theorem) states that, for a simply connected, bounded region $D$, with surface $S$ and a function defined and differentiable on it, $vb(F)$, then
-  $ integral.surf_S vb(F) dot dif vb(S) = integral.triple_D op("div") vb(F) div V, $
+  $ integral.surf_S vb(F) dot dif vb(S) = integral.triple_D op("div") vb(F) dif V, $
   where $op("div") (P vu(i) + Q vu(j) + R vu(k)) = P_x + Q_y + R_k.$
 ]
 #proof[

@@ -45,7 +45,7 @@ Physically, if $U(x, y)$ describes the potential energy, then the force field $ 
   The other direction is more involved. Recall that $(f_x)_y = (f_y)_x$. If $vb(F) = M vu(i) + N vu(j)$ and if $vb(F)$ is a gradient field, $M_y = N_x$. The important observation is that the inverse is true. 
 
   #lemma[
-    If $vb(F) = (M, N)$ and $M_y = N_x$, then $exists f: vb(F) = nabla f$. 
+    If $vb(F) = (M, N)$ and $M_y = N_x$, then $exists f: vb(F) = grad f$. 
   ]
   #proof[
     uhhhhh imma learn green's and come back to it

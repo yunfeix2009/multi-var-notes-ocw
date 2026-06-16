@@ -5,28 +5,28 @@
 ]
 
 #if not _is-html {
-  oldpagebreak()
+  std.pagebreak()
 }
 #chapter-section("differentiation")[
   #include "differentiation/index.typ"
 ]
 
 #if not _is-html {
-  oldpagebreak()
+  std.pagebreak()
 }
 
 #chapter-section("integration")[
   #include "integration/index.typ"
 ]
 #if not _is-html {
-  oldpagebreak()
+  std.pagebreak()
 }
 
 #chapter-section("vector-fields")[
   #include "vector-fields/index.typ"
 ]
 #if not _is-html {
-  oldpagebreak()
+  std.pagebreak()
 }
 // appendix
 
