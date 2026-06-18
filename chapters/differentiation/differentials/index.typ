@@ -4,7 +4,7 @@
 Motivated by the one dimensional case, if $y = f(x)$, then $dif y = f'(x) dif x$. From this, an infinitesimal change in one variable is related to another. One obvious benefits of this is that the reverse direction becomes easy to obtain. 
 
 #example[
-  If $y= sin^(-1) x$, find $dif y/dif x$.]
+  If $y= sin^(-1) x$, find $(dif y)/(dif x)$.]
 
 #solution[
   Applying $sin$ on both sides, $x = sin y$, so $ dif x = cos y dif y ==> (dif y)/(dif x) = 1/(cos y) = 1/sqrt(1-x^2). $

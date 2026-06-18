@@ -24,32 +24,32 @@ Change of variables is a useful integration technique.
 In general, $ cases(dif u = u_x dif x + u_y dif y , dif v = v_x dif x + v_y dif y) ==> mat(dif u; dif v) = mat(u_x, u_y; v_x, v_y) mat(dif x; dif y). $
 
 Since linear transformations preserve collinearity, a $dif x $ by $dif y$ rectangle is mapped to a parallelogram, with area $ dif u times dif v &= ( u_x dif x + u_y dif y ) times (v_x dif x + v_y dif y) \ &= (u_x v_y - v_x u_y) dif x times dif y 
-\ &= det mat(u_x, u_y; v_x, v_y) dif x times dif y. $  
+\ &=  mat(u_x, u_y; v_x, v_y; delim:"|") dif x times dif y. $  
 
 #definition[
-  For differentials forms, like exterior product ( $and$ wedge) be an anti commutative ($a and b = - b and a$) and associative product between differentials that measures the oriented area in the x-y plane. 
+  For differentials forms, like exterior product ( $and$ wedge) be an anti-commutative ($a and b = - b and a$) and associative product between differentials that measures the oriented area in the x-y plane. 
 ]
 
 
-Then, we have $ dif u and dif v = det mat(u_x, u_y; v_x, v_y) dif x and dif y ==> dif A' = det mat(u_x, u_y; v_x, v_y) dif A. $
+Then, we have $ dif u and dif v =  mat(u_x, u_y; v_x, v_y; delim:"|") dif x and dif y ==> dif A' = det mat(u_x, u_y; v_x, v_y; delim:"|") dif A. $
 
 #definition[
-  Define _jacobian_ of $u$ and $v$ wrt $x$ and $y$ to be $ bold(J) = (partial(u, v))/(partial (x, y)) = abs(mat(u_x, u_y; v_x, v_y)). $
+  Define _jacobian_ of $u$ and $v$ wrt $x$ and $y$ to be $ bold(J) := (partial(u, v))/(partial (x, y)) = mat(u_x, u_y; v_x, v_y; delim:"|"). $
 ]
 
 Then, we have $dif u dif v = abs(bold(J)) dif x dif y. $
-In fact, the jacobian is easily generalizable to finitely many variables. 
+In fact, the jacobian is easily generalizable to finitely many variables. In the special case that there is only one variable, this substitution becomes the well-known "u-substitution."
 
 #example[
   Find the jacobian of $x$ and $y$ wrt $r$ and $theta$. 
 ]
 #solution[
-  By definition, $ bold(J) &= (partial (x, y))/(partial (r, theta)) \ &= abs(mat(x_r, x_theta; y_r, y_theta)) \ &=abs(mat(cos theta, - r sin theta; sin theta, r cos theta)) \ &= r cos^2 theta + r sin^2 theta \ &= r. $
+  By definition, $ bold(J) &= (partial (x, y))/(partial (r, theta)) \ &= mat(x_r, x_theta; y_r, y_theta; delim:"|") \ &=mat(cos theta, - r sin theta; sin theta, r cos theta; delim:"|") \ &= r cos^2 theta + r sin^2 theta \ &= r. $
 
   Furthermore, $ dif x dif y = r dif r dif theta, $ supporting the previous geometric argument. 
 ]
 #remark[
-  Since the formula must be consistent, $ (partial (u, v))/(partial (x, y)) dot (partial (x, y))/(partial (x, y)) = 1. $
+  Since the formula must be consistent, $ (partial (u, v))/(partial (x, y)) dot (partial (x, y))/(partial (u, v)) = 1. $
 ]
 
 Here, we will work out another example purely for practice. 
@@ -59,7 +59,7 @@ Here, we will work out another example purely for practice.
 ]
 
 #solution[
-  We first compute the jacobian: $ bold(J) &= abs(mat(u_x, u_y; v_x, v_y)) \ &= abs( mat( 1, 0; y, x)) \ &= x. $
+  We first compute the jacobian: $ bold(J) &= mat(u_x, u_y; v_x, v_y; delim:"|") \ &=  mat( 1, 0; y, x; delim:"|") \ &= x. $
 
 Notice that here, everything is positve, so we do not have to concern about the sign of $bold(J)$. 
 

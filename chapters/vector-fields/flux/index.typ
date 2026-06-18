@@ -11,7 +11,7 @@ As a comparison to work, $ W = integral.cont_c vb(F) dot dif vb(r) = integral.co
 Like how work is interpreted physically where $vb(F)$ is a force field, flux is often interpreted with $vb(F)$ as a velocity field for w fluid. Then, flux represents how much of that fluid is flowing in or out of the membrane modeled with the curve $c$. Conventionally, what flows from the left to right of $c$ is positive and vice versa.
 
 #example[
-  Let $c$ be a curve centered at the origin with radius $a$, counterclockwise and $F := x vu(i) + y vu(j)$.
+  Let $c$ be a circle centered at the origin with radius $a$, counterclockwise and $F := x vu(i) + y vu(j)$.
   Find the flux of $c$ wrt $F$.
 ]<emp:fluxOfCircle>
 #solution[
@@ -118,8 +118,10 @@ As a notation, $dif (vb(S)) = vu(n) dot vb(S)$.
 ]
 surface integral
 $
-  vu(n) dot Delta S &= (((x+ Delta x), y, f(x+Delta x, y) - (x, y, f(x, y))) times ((x, y+ Delta y, f(x, y + Delta y)) - (x, y, f(x, y))
-  \ &= (Delta x, 0, f(x + Delta x, y) - f(x, y)) times (0, Delta y, f(x, y + Delta y) - f(x + y))
+  vu(n) dot Delta S &= (((x+ Delta x), y, f(x+Delta x, y) \
+  & quad- (x, y, f(x, y))) times ((x, y+ Delta y, f(x, y + Delta y)) 
+  \ & quad quad- (x, y, f(x, y))
+  \ &= (Delta x, 0, f(x + Delta x, y) - f(x, y)) \ & quad times (0, Delta y, f(x, y + Delta y) - f(x + y))
   \ & approx (Delta x, 0, f_x Delta x) times (0, Delta y, f_y Delta y)
   \ &= (1, 0, f_x) times (0, 1, f_y) Delta x Delta y
   \ &= abs(mat(vu(i), vu(j), vu(k); 1, 0, f_x; 0, 1, f_y)) Delta x Delta y
@@ -191,8 +193,9 @@ Similar to $op("curl") vb(F) = curl vb(F)$, if $f(x, y, z) = (P, Q, R)$, then $ 
   Fix one such region $D$, projecting $U$ onto the $x-y$ plane, we have $ integral.triple_D R_z dif V & = integral.double_U (integral_(z_1(x, y))^(z_2(x, y)) R_z dif z) dif A \
                               & = integral.double_U (R(x, y, z_1(x, y)), R(x, y, z_2(x, y))) dif A $
 
-  On the other hand, since $ dif vb(S) = (- pdv(z, x), - pdv(z, y), 1) dif x dif y $, the left side of the theorem becomes $ integral.surf_S R dot dif vb(S) = integral.surf_"top" R dot dif vb(S) + integral.surf_"bottom" R dot dif vb(S) + integral.surf_"sides" R dot dif vb(S)
-  \ &= integral.surf_U R dot (- pdv(z_2, x), - pdv(z_2, y), 1) dif x dif y + integral.surf_U R dot -(- pdv(z_1, x), - pdv(z_1, y), 1) dif x dif y + 0
+  On the other hand, since $ dif vb(S) = (- pdv(z, x), - pdv(z, y), 1) dif x dif y $, the left side of the theorem becomes $ integral.surf_S R dot dif vb(S) &= integral.surf_"top" R dot dif vb(S) + integral.surf_"bottom" R dot dif vb(S) + integral.surf_"sides" R dot dif vb(S)
+  \ &= integral.surf_U R dot (- pdv(z_2, x), - pdv(z_2, y), 1) dif x dif y 
+  \ & quad+ integral.surf_U R dot -(- pdv(z_1, x), - pdv(z_1, y), 1) dif x dif y + 0
   \ &= integral.surf_U R dif x dif y - integral.surf_U R dif x dif y
   \ &= integral.surf_U R(x, y, z_2(x, y)) dif x dif y - integral.surf_U R(x, y, z_1(x, y)) dif x dif y
   \ &= integral.double_U (R(x, y, z_1(x, y)), R(x, y, z_2(x, y))) dif A
@@ -206,7 +209,7 @@ Similar to $op("curl") vb(F) = curl vb(F)$, if $f(x, y, z) = (P, Q, R)$, then $ 
 Now, we explain the previous suspicious-looking $4/3 pi a^3$, see <emp:motivatingDivergence>, with Divergence Theorem.
 #solution[
   $
-    integral.surf_S vb(F) dot dif vb(S) & = integral.triple_D op("div") vb(F) div V \
+    integral.surf_S vb(F) dot dif vb(S) & = integral.triple_D op("div") vb(F) dif V \
                                         & = integral.triple_D 1 dif V \
                                         & = op("volume") (D) \
                                         & = 4/3 pi a^3.

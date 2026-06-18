@@ -21,7 +21,7 @@ Polar coordinates poses a motivating case for which $x$ and $y$ are also multi v
 ]
 
 #example[
-  Given $ cases(x:= r cos theta, y:= r sin theta) $, express $ nabla^2 = pdv(, x, 2) + pdv(, y, 2) $ in $ pdv(, r), pdv(, theta), pdv(, r, 2), pdv(, theta, 2). $
+  Given $ cases(x:= r cos theta, y:= r sin theta), $ express $ nabla^2 = pdv(, x, 2) + pdv(, y, 2) $ in terms of $ pdv(, r), pdv(, theta), pdv(, r, 2), pdv(, theta, 2). $
 ]
 #solution[
   We have: 

@@ -12,7 +12,7 @@ However, $vb(F)$ and $vb(r)$ may vary, as the target is moving along a trajector
 In general, $ W = integral_(t_1)^(t_2) vb(F) dot dv(vb(r), t) dif t. $
 
 #example[
-  Fix the force field $ vb(F) = - y vu(i) + x vu(j) $ and trajectory $ c := cases(x = t, t = t^2), t in [0, 1]. $ Find the word done by the force field. 
+  Fix the force field $ vb(F) = - y vu(i) + x vu(j) $ and trajectory $ c := cases(x = t, t = t^2), quad t in [0, 1]. $ Find the word done by the force field. 
 ]<emp:work1>
 #solution[
   Let $ vb(r):= x vu(i) + y vu(j)$, $ dv(vb(r), t) = vu(i) + 2 t vu(j). $ 
@@ -22,10 +22,10 @@ In general, $ W = integral_(t_1)^(t_2) vb(F) dot dv(vb(r), t) dif t. $
   \ &= integral_0^1 t^2 dif t 
   \ &= 1/3. #qedhere $
 ]
-However, alternatively, one may also notice that if $vb(F) = (M, N)$ and $vb(r) = (dif x, dif y)$, then $ integral_c vb(F) dot vb(r) = integral_c M dif x + N dif y. $
+However, alternatively, one may also notice that if $vb(F) = (M, N)$ and $vb(r) = (dif x, dif y)$, then $ integral_c vb(F) dot dif vb(r) = integral_c M dif x + N dif y. $
 There is a catch, though, that $M$ and $N$ are dependent on both $x$ and $y$. But the trajectory serves as a constraint, making the right side two single variable integrals. Hence, another solution to @emp:work1 is as follows. 
 #solution[
-  $ W &= integral_c vb(F) dot vb(r) 
+  $ W &= integral_c vb(F) dot dif vb(r) 
   \ &= integral_c M dif x + N dif y
   \ &= integral_c -y dif x + x dif y
   \ &= integral_c -t^2 dif t + 2 t^2 dif t 
@@ -34,7 +34,7 @@ There is a catch, though, that $M$ and $N$ are dependent on both $x$ and $y$. Bu
 ]
 
 #remark[
-  Work, $integral_c vb(F) dot vb(r)$ is generally dependent on the trajectory but the not parametrization, so in practice, one should use the most convenient parametrization. 
+  Work, $integral_c vb(F) dot dif vb(r)$ is generally dependent on the trajectory but the not parametrization, so in practice, one should use the most convenient parametrization. 
 ]
 
 Often, it is useful to think about the geometric relationship between $vb(F)$ and $vb(r)$. For example, the lorenz force always do $0$ work as it is always perpendicular to the trajectory. 
