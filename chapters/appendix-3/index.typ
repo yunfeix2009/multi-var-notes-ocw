@@ -12,3 +12,8 @@ Another layer to this is how $18.S 190$, Introduction to Metric Spaces only has 
 #chapter-section("properties-generalization")[
   #include "properties-generalization/index.typ"
 ]
+
+
+#chapter-section("general-theory")[
+  #include "general-theory/index.typ"
+]

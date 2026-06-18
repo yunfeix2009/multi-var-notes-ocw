@@ -6,7 +6,7 @@
 
 == Dot Product Applications
 
-+ One of the first fundamental applications of dot product is converting between lengths and angles and coordinates.
++ One of the most frequent applications of dot product is converting between lengths and angles and coordinates.
   // #theorem[
   //   $"game" = "lost"$
   // ]
@@ -15,7 +15,7 @@
 
   ]<ex:dot-product-angle-1>
   #solution[of @ex:dot-product-angle-1][
-    Express in terms of vectors, $va(P R) = va(R) - va(P) = (-1, 0, 2)$ and $va(P Q) = va(Q) - va(P) = (-1, 1, 0)$. Therefore, $theta := angle R P Q$, $va(P R) dot va(P Q) = norm(va(P R)) norm(va(P Q)) cos theta$. Thus,
+    Express in terms of vectors, $va(P R) = va(R) - va(P) = (-1, 0, 2)$ and $va(P Q) = va(Q) - va(P) = (-1, 1, 0)$. Therefore, let $theta := angle R P Q$, $va(P R) dot va(P Q) = norm(va(P R)) norm(va(P Q)) cos theta$. Thus,
     $ theta = cos^(-1) (((-1, 0, 2) dot (-1, 1, 0))/(norm((-1, 0, 2)) norm((-1, 1, 0)))) = 1/sqrt(10). #qedhere $
   ]
   #example[Pset 1 Part II p1][
@@ -125,4 +125,7 @@
     geometrically, there is a $- hat(bold(i))$ component iff $alpha + beta > 90^compose$
   ]
 
+#remark[
+  In fact, the component of the force against the wind (in the $-vu(i)$ direction) is $vb(F)(alpha, beta) = a cos alpha cos beta (-cos(alpha + beta))$. Then, one could show that the $vb(F)$ is maximized when $alpha = beta = pi/3$ and $vb(F) = a/8$ in that case. 
+]
 

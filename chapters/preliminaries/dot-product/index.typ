@@ -9,11 +9,12 @@ $bold(b) = ( b_1, b_2, dots, b_n )$,
 their *dot product* is defined by
 $bold(a) dot bold(b)
 := sum_(i=1)^n a_i b_i.$
-The dot product is a scalar.
 ]<def:dot-product>
 
+It is important to keep in mind that the dot product produces a scalar.
+
 #theorem[
-For a fixed vector $vb(a)=(a_1,dots,a_n)$, $norm(bold(a))^2
+For a fixed vector $vb(a)=(a_1,dots,a_n)$, define its norm to be $norm(bold(a))^2
 =
 bold(a) dot bold(a)
 =
