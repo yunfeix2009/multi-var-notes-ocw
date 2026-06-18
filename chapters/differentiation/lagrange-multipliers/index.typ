@@ -25,7 +25,7 @@ Therefore, the key observation here is that at extremum, the level curve of $f$ 
 
   Since the trivial solution of $(x, y) = (0, 0)$ does not satisfy the constraint equation, it must be $mat(2, -lambda; lambda, -2)$ to have determinant $0$. 
 
-  Thus, $ det mat(2, -lambda; lambda, -2) = -4 - (- lambda^2) = 0 ==> lambda = plus.minus 2.  $
+  Thus, $ mat(2, -lambda; lambda, -2; delim: "|") = -4 - (- lambda^2) = 0 ==> lambda = plus.minus 2.  $
 
   If $lambda = 2$, $ 2x = 2y ==> x = y ==> x^2 = 1 ==> x = y= plus.minus 1 ==> (x, y) in { (1, 1), (-1, -1)}. $
 

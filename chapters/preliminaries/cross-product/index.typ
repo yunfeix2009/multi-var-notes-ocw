@@ -4,7 +4,7 @@
 With @def:dot-product, we have the means to often conveniently express angles and lengths in terms of vectors. However, there is another important concept that we are unable to grapple with using dot product. And that is area. For which we seek help from the use of @def:cross-product.
 
 #theorem[
-  The area of the triangle formed by two vectors with the same dimensions, $vb(a)$ and $vb(b)$ is $det mat(a_1, a_2; b_1, b_2)$
+  The area of the triangle formed by two vectors with the same dimensions, $vb(a)$ and $vb(b)$ is $ mat( delim:"|",a_1, a_2; b_1, b_2)$
 ]
 #proof[
   Let $theta$ denote the angle between $vb(a)$ and $vb(b)$. Then geometrically, we have the area to be $ 1/2 norm(vb(a)) norm(vb(b)) sin theta. $

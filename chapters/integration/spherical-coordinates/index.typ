@@ -55,3 +55,19 @@ $
 ]
 
 This fact is a direct consequence of the cancellation of $rho$ from the expression. The deeper reason of this is the fact that the inverse square of the decay of gravitational force cancels the square growth of the surface area.
+
+#example[
+  (Practice Final P12) A solid hemisphere of radius $1$ has its lower flat base on the $x y$-plane and center at the origin. Its density function is $delta = z$. Find the force of gravitational attraction it exerts on a unit mass at the origin.
+]
+#solution[
+  For a small enough volume $dif V$, the force $ vb(F)_g &= G m delta vb(r)/norm(r)^3 dif V 
+  \ &= G m delta ((rho sin Phi cos theta, rho sin Phi sin theta, rho cos Phi))/rho^3 rho^2 sin Phi dif rho dif Phi dif theta
+  \ &= G m delta (sin Phi cos theta, sin Phi sin theta, cos Phi) sin Phi dif rho dif Phi dif theta.
+   $
+   Also, by symmetry, the final force is in $vu(k)$ direction. So, $ vb(F)_sigma &= integral_0^(2pi) integral_0^(pi/2) integral_0^1 G m delta sin Phi cos Phi dif rho dif Phi dif theta 
+   \ &= G integral_0^(2pi) integral_0^(pi/2) integral_0^1 sin Phi cos^2 Phi rho dif rho dif Phi dif theta 
+   \ &= G 2pi integral_0^(pi/2) 1/2 sin Phi cos^2 Phi dif Phi dif theta 
+   \ &= G pi lr([(cos^3 Phi)/3]|)^(pi/2)_0 
+   \ &= G pi dot 1/3
+   \ &= (G pi)/3. #qedhere $
+]

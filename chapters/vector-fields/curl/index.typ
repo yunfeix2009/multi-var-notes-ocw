@@ -31,6 +31,26 @@ With mild abuse of notations, by treating nabla as a vector of operations, $ gra
 
 Then, $ curl vb(F) = mat(vu(i), vu(j), vu(k); pdv(, x), pdv(, y), pdv(, z); P, Q, R; delim: "|") = op(bold("curl")). $
 
+#example[
+  (Practice Final P14) 
+
+  a) Let $vb(F) = a y^2 vu(i) + 2y(x + z) vu(j) + (b y^2 + z^2) vu(k)$. For what values of the constants $a$ and $b$ will $vb(F)$ be conservative? 
+
+  b) Using these values, find a function $f (x, y, z) $ such that $vb(F) = nabla f$.
+
+  c) Using these values, give the equation of a surface S having the property : $integral_P^Q vb(F) dif vb(r) = 0$ for any two points P and Q on the surface S.
+]
+#solution[
+  (a) $vb(F)$ is conservative iff $ curl vb(F) &= mat(delim:"|", vu(i), vu(j), vu(k); pdv(, x), pdv(, y), pdv(, z); a y^2, 2y(x+z), b y^2 + z^2) 
+  \ &= (2 b y - 2y) vu(i) + 0 vu(j) + (2y + 2 a y) vu(k) = 0
+  \ & ==> a = b = 1. $
+  (b) With differentials, $ dif vb(F) = y^2 dif x + 2y(x+z) dif y + (y^2 + z^2) dif z. $
+  So, $ f &= 2 x y^2 + g(y, z)
+  \ &= x y^2 +  z y^2 + g(z) 
+  \ &= (x + z) y^2 + z^3/3 + C. $
+  (c) $P$ and $Q$ need to be on a level surface of $f$, so $f(x, y, z) = c$, meaning $S := (x + z)y^2 + z^3 = C$
+]
+
 === Stokes' Theorem
 Recall the Green's Theorem in normal form, it allows the conversion between a line integral of work to a surface integral of the two dimensional curl. Similarly, this is achievable for a line integral along a curve in $RR^3$ too, with the Stokes' Theorem.
 #theorem[
@@ -72,4 +92,16 @@ Like 2D, if $vb(F)$ is a gradient field, $curl F = 0$, since $vb(F)$ satisfies t
   $ integral.cont_c vb(F) dot dif bold(r) = integral.double_S curl vb(F) dif vb(S) = 0. $
 
   Therefore, $vb(F)$ is path-independent, the function $ f(P) = integral_(P_0)^P vb(F) dot dif vb(r) $ is well-defined, and $vb(F) = grad f$, meaning $vb(F)$ is a gradient field. 
+]
+
+#example[
+  (Practice Final P17) An xz-cylinder in 3-space is a surface given by an equation f (x, z) = 0 in x and z alone; its section by any plane y = c perpendicular to the y-axis is always the same xz-curve.
+Show that if $vb(F) = z^2 vu(i) + y^2 vu(j) + x z vu(k)$, then $integral.cont_C vb(F) dot dif vb(r) = 0$ for any simple closed curve C lying on an xz-cylinder.
+]
+#solution[
+  By Stokes' Theorem, $ integral.cont_C vb(F) dot dif vb(r) &= integral.surf_S curl vb(F) dif vb(S). $
+  While $ curl vb(f) &= mat(delim:"|", vu(i), vu(j), vu(k); pdv(, x), pdv(, y), pdv(, z); z^2, y^2, x z) = z vu(j). 
+  $
+
+  So, work is $ integral.surf_S z vu(j) dot vu(n) dif S . $ But $vu(n)$ has no $y$ component due to symmetry, the integrand is therefore $0$. 
 ]

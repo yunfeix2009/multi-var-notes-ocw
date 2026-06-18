@@ -31,7 +31,7 @@ Since linear transformations preserve collinearity, a $dif x $ by $dif y$ rectan
 ]
 
 
-Then, we have $ dif u and dif v =  mat(u_x, u_y; v_x, v_y; delim:"|") dif x and dif y ==> dif A' = det mat(u_x, u_y; v_x, v_y; delim:"|") dif A. $
+Then, we have $ dif u and dif v =  mat(u_x, u_y; v_x, v_y; delim:"|") dif x and dif y ==> dif A' = mat(u_x, u_y; v_x, v_y; delim:"|") dif A. $
 
 #definition[
   Define _jacobian_ of $u$ and $v$ wrt $x$ and $y$ to be $ bold(J) := (partial(u, v))/(partial (x, y)) = mat(u_x, u_y; v_x, v_y; delim:"|"). $

@@ -216,7 +216,26 @@ Now, we explain the previous suspicious-looking $4/3 pi a^3$, see <emp:motivatin
   $
 ]
 
-
+#example[
+  (Practice Final P15, 16) Let $S$ be the closed surface whose bottom face $B$ is the $DD$ (unit disc) in the $x y$-plane and whose
+upper surface is the paraboloid $z = 1-x^2 - y^2$ and $z >=0$. 
+(a) Find the flux of $vb(F) = x vu(i) + y vu(j) + z vu(k)$ across U by using the divergence theorem.
+(b) )Using the data of the preceding problem, calculate the flux of $F$ across $U$ directly, by setting up the surface integral for the flux and evaluating the resulting double integral in the xy-plane.
+]
+#solution[
+  (a) The flux is $ integral.surf_S vb(F) dot dif vb(S) + integral.surf_B vb(F) dot dif vb(S) &= integral.triple_V div vb(F) dif V
+  \ &= integral.triple_V 3 dif V 
+  \ &= 3 integral_0^(2pi) integral_0^1 (1-r^2) r dif r dif theta 
+  \ &= 3 dot 2pi dot lr([r^2/2 - r^4/4]|)_0^1 
+  \ &= (3 pi)/2. 
+  $
+  (b) Since $dif S &= plus.minus (-f_x, -f_y, 1) dif x dif y 
+  \&= (2x, 2y, 1) dif x dif y. $
+  Then, $ integral.surf_S vb(F) dot dif vb(S) = integral.double_B vb(F) dot (2x, 2y, 1) dif x dif y 
+  \ &= integral.double_B 2x^2 + 2y^2 + z dif x dif y 
+  \ &= integral_0^(2pi) integral_0^1 (1+r^2) r dif r dif theta 
+  \ &= (3pi)/2. $
+]
 === Diffusion Equations
 
 One consequential application of the Divergence Theorem is in solving diffusion equations, that governs how some substance "spread out" when situated in a static fluid.

@@ -4,9 +4,9 @@
 In one variable calculus, the integral of a function is the area under its curve in a certain interval. Naturally, in calculus for functions of two variables, _double integral_ measure the volume under its surface under a certain region. 
 
 #definition[
-  For a region $R$, $A_i$ are disjoint subsets of $R$ such that $union.big_i A_i = R$. Then, for a two variable function $f(x, y)$, the volume under the surface of $f(x, y)$ over the region $R$ approximates to $sum_(i) f(x, y) A_i$. 
+  For a region $R$, $A_i$ are disjoint subsets of $R$ such that $union.big_i A_i = R$. Then, for a two variable function $f(x, y)$, the volume under the surface of $f(x, y)$ over the region $R$ approximates to $sum_(i) f(x, y) op("area") (A_i)$. 
 
-  Define $ integral.double_R f(x, y) dif A = lim_(A_i -> 0) sum_(i) f(x, y) A_i. $
+  Define $ integral.double_R f(x, y) dif A = lim_(op("area") (A_i) -> 0) sum_(i) f(x, y) op("area") (A_i). $
 ]
 
 As a way to compute double integrals without doing the summation, we consider the volume as sum of the slices along the y-z plane. In fact, $ integral.double_R f(x, y) dif A &= integral_(x_"min")^(x_"max") [integral_(y_"min" (x))^(y_"max"(x)) f(x, y) dif y] dif x
