@@ -16,7 +16,7 @@ Thus, a natural question that comes is how to determine what type of extremum a 
 === Second Derivative Test
 Define the second derivatives for a twice-differentiable two-variable function $f(x, y)$, $pdv(f, x, 2) = pdv(pdv(f, x), x) = f_(x x)$. We also have $f_(x y) = pdv(f, x, y) = pdv(f, y, x) = f(y, x)$. 
 
-Define the following quantities for the second-derivative test assuming (x_0, y_0) is a critical point, $ cases(A = f_(x x) (x_0, y_0), B = f_(x y) (x_0, y_0), C = f_(y y) (x_0, y_0)). $
+Define the following quantities for the second-derivative test assuming $(x_0, y_0)$ is a critical point, $ cases(A = f_(x x) (x_0, y_0), B = f_(x y) (x_0, y_0), C = f_(y y) (x_0, y_0)). $
 
 Then, we have $ f "has a"  cases( "local minimum" & "if" A C - B^2 > 0 and A>0, "local maximum" & "if" A C - B^2 > 0 and A < 0, "saddle point" &"if" A C - B^2< 0, "inconclusive" &"if" A C - B^2 = 0). $
 
@@ -30,6 +30,12 @@ Then, we have $ f "has a"  cases( "local minimum" & "if" A C - B^2 > 0 and A>0, 
 
   Observe that $ Q(h, k) = 1/2 mat(h; k) mat(f_(x x), f_(x y); f_(x y), f_(y y)) mat(h, k).  $
   So, we have the determinant criterion $f_(x x) f_(y y) - f_(x y)^2$. So, if $f_(x x) f_(y y) - f_(x y)^2 > 0$, Q is definite (sign does *not* depend on $h$ and $k$) -- positive when $f_(x x)> 0$ and vice versa. While $Q$ is indefinite (sign *does* depends on $h$ and $k$) when $f_(x x) f_(y y) - f_(x y)^2< 0$. 
+
+  #remark[
+    Here, we make a connection to the subject of linear algebra. More generally, with more than $2$ variables, define Hessian matrix $ vb(H)$ such that $ vb(H)_(i j) = f_(x_i x_j). $ Fix critical point $vb(x)_0$, $vb(x)_0$ is a minimum iff $vb(H)$ is positive definite and maximum iff $vb(H)$ is "negative definite," meaning all eigenvalues negative. This is due to $ forall vb(x), vb(x)^top vb(A) vb(x) > 0 <==> vb(A) "is positive definite". $ The proof of this theorem could be seen in _Notes of Linear Algebra_ by _Saint Even et al._ subsection 8.2.2 (may change due to versions), Positive Definite Matrices under Eigenvalues and Eigenvectors chapter.
+
+    Particularly, the rather cumbersome conditions above translates neatly to signs of the eigenvalues of the Hessian matrix. 
+  ]
 
   Therefore, for the inconclusive case of $f_(x x) f_(y y) - f_(x y)^2 = 0$, the situation of the critical point depends on higher derivatives. 
 ]
