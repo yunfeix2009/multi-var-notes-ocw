@@ -106,7 +106,7 @@
         meander.content[
           #set par(justify: true)
           Background: By carefully positioning the
-          sail the boat can be made to sail into the wind – this process is called _tacking_.
+          sail the boat can be made to sail into the wind---this process is called _tacking_.
 
           Described mathematically, the wind vector is first projected onto the
           perpendicular to the sail to obtain the direction of the force on the sail.
