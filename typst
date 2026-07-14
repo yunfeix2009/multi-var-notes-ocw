@@ -1,0 +1,32 @@
+#!/bin/sh
+set -eu
+
+repo_dir=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+
+if [ -n "${TYPST_BIN:-}" ]; then
+  exec "$TYPST_BIN" "$@"
+fi
+
+candidate=$(command -v typst 2>/dev/null || true)
+case "$candidate" in
+  "$repo_dir/typst"|./typst|typst) candidate="" ;;
+esac
+
+if [ -n "$candidate" ] && [ -x "$candidate" ]; then
+  exec "$candidate" "$@"
+fi
+
+for candidate in \
+  /opt/homebrew/bin/typst \
+  /usr/local/bin/typst \
+  /usr/bin/typst \
+  "$HOME/.typst/bin/typst" \
+  "$HOME/.local/bin/typst"
+do
+  if [ -x "$candidate" ]; then
+    exec "$candidate" "$@"
+  fi
+done
+
+echo "Typst is not installed. Install it, then rerun this command." >&2
+exit 127
