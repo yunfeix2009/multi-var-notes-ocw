@@ -1,28 +1,16 @@
-#import "../../lib.typ":*
-= Vector Fields
+#import "/lib.typ": *
 
-Here, we examine the concepts of vector fields using techniques developed from differentiation and integration of functions with more than one variables. 
+#show: docs-chapter.with(
+  title: "Vector Fields",
+  route: "vector-fields",
+  children: [
+    #include "fundamentals/index.typ"
+    #include "conservative-fields/index.typ"
+    #include "curl/index.typ"
+    #include "green/index.typ"
+    #include "flux/index.typ"
+    #include "simply-connected-regions/index.typ"
+  ],
+)
 
-#chapter-section("fundamentals-vector-field")[
-  #include "fundamentals/index.typ"
-]
-
-#chapter-section("conservative-fields")[
-  #include "conservative-fields/index.typ"
-]
-
-#chapter-section("curl")[
-  #include "curl/index.typ"
-]
-
-#chapter-section("green")[
-  #include "green/index.typ"
-]
-
-#chapter-section("flux")[
-  #include "flux/index.typ"
-]
-
-#chapter-section("simply-connected-regions")[
-  #include "simply-connected-regions/index.typ"
-]
+Here, we examine the concepts of vector fields using techniques developed from differentiation and integration of functions with more than one variables.

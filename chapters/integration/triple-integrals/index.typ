@@ -9,15 +9,15 @@ Now, we add one more dimension to the plane, to study functions of three variabl
 
 Assuming the reader does not have a native way to visualize $RR^4$ and the notion of "volume" in which, we to an extent lose the trend of "area" representation for one-variable integrals and "volume" representation for double integrals.
 
-#definition[
+#lbl(<def:integration-triple-integrals-1>, definition[
   For a region $R in RR^3$ and a real function of three variables, $f(x, y, z)$, $ integral.triple_R f dif V $ is a triple integral.
-]
+])
 
 In Cartesian coordinates, $div V = dif x dif y dif z$.
 
-#example[
+#lbl(<ex:integration-triple-integrals-1>, example[
   Fix paraboloids $z_1 = x^2 + y^2$ and $z_2 = 4 - x^2 - y^2$. Find the volume of the region bounded by them.
-]
+])
 #solution[
   With double integrals, $ V = integral.double_R z_1 - z_2 dif A $, where $R$ is the projection of the solid on the $x-y$ plane, which is solvable; however, the volume $V$ could also be written in the form of triple integrals $ V = integral.triple_R' 1 dif V $, where $R'$ is the region bounded by the two paraboloids.
 
@@ -39,9 +39,9 @@ In Cartesian coordinates, $div V = dif x dif y dif z$.
       & = 4 pi. #qedhere
   $
 ]
-#remark[
+#lbl(<rem:integration-triple-integrals-1>, remark[
   Be careful about the fact that $dif x dif y = r dif r dif theta$.
-]
+])
 In fact, this set of coordinates (r, theta, z) is _cylindrical coordinates_.
 
 Similar to double integrals with many physical applications, triple integrals are often quite useful as well. Below is a list of quantities that triple integrals is often handy in finding of.

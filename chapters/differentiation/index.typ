@@ -2,7 +2,7 @@
 
 #show: docs-chapter.with(
   title: "Differentiation",
-  route: "diff",
+  route: "differentiation",
   description: "differentiation of multiple variables",
 
   children: [
@@ -16,7 +16,6 @@
     #include "lagrange-multipliers/index.typ"
     #include "non-independent-variables/index.typ"
     #include "partial-differential-equations/index.typ"
-
   ],
 )
 Here, we examine the concepts related to the differentiation of functions with more than one variables along with their applications.

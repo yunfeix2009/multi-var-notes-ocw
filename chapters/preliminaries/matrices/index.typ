@@ -35,7 +35,7 @@ $
   )
 $
 
-#definition[
+#lbl(<def:preliminaries-matrices-1>, definition[
   Let $bold(A) = (a_(i j))$ be an $m times n$ matrix and
   $bold(B) = (b_(i j))$ be an $n times p$ matrix.
 
@@ -52,9 +52,9 @@ $
 
   The product $bold(A) bold(B)$ is defined only when the number of columns of
   $bold(A)$ equals the number of rows of $bold(B)$.
-]
+])
 
-#definition[
+#lbl(<def:preliminaries-matrices-2>, definition[
   For a $2 times 2$ matrix
   $
     bold(A) = mat(
@@ -66,9 +66,9 @@ $
   $
     det(vb(A)) = mat(a, b; c, d; delim: "|") = a d - b c.
   $
-]
+])
 
-#definition[
+#lbl(<def:preliminaries-matrices-3>, definition[
   For a $3 times 3$ matrix
   $
     bold(A) = mat(
@@ -97,30 +97,30 @@ $
       delim: "|"
     ).
   $
-]
+])
 
-#definition[
+#lbl(<def:preliminaries-matrices-4>, definition[
   Let $bold(A)$ be a square matrix. The $(i,j)$-*minor* of $bold(A)$, denoted
   $M_(i j)$, is the determinant of the matrix obtained from $bold(A)$ by deleting
   the $i$th row and the $j$th column.
-]
+])
 
-#definition[
+#lbl(<def:preliminaries-matrices-5>, definition[
   Let $bold(A)$ be a square matrix. The $(i,j)$-*cofactor* of $bold(A)$, denoted
   $C_(i j)$, is defined by
   $
     C_(i j) = (-1)^(i+j) M_(i j).
   $
-]
+])
 
-#definition[
+#lbl(<def:preliminaries-matrices-6>, definition[
   Let $bold(A) = (a_(i j))$ be an $m times n$ matrix. The *transpose* of
   $bold(A)$, denoted $bold(A)^T$, is the $n times m$ matrix whose $(i,j)$-entry
   is
   $
     (bold(A)^T)_(i j) = a_(j i).
   $
-]
+])
 
 The determinant measures how a square matrix scales signed area in two dimensions
 and signed volume in three dimensions.
@@ -128,9 +128,9 @@ and signed volume in three dimensions.
 
 Matrix algebra satisfies many properties for a nice algebraic structure.
 + Associative
-  #theorem[
+  #lbl(<thm:preliminaries-matrices-1>, theorem[
     In other words, if $bold(X)$ is a vector and $bold(A)$ and $bold(B)$ are matrices, $ (bold(A B)) bold(X) = bold(A) (bold(B X)). $
-  ]
+  ])
 
   This theorem could be interpreted with the lens of matrices as transformations. The transformation $bold(A B)$ is equivalent to applying the transformation described by $bold(A)$ first, then transformation described by matrix $bold(A)$.
 
@@ -142,14 +142,14 @@ Matrix algebra satisfies many properties for a nice algebraic structure.
   Denote it as $bold(X)$, we have $ bold(I X) = bold(X). $
 
   + Multiplicative Inverse
-    #definition[For a matrix $bold(A)$, matrix $bold(M)$ is its inverse iff $bold(A M) = bold(M A) = bold(I)$, where $bold(I)$ is the identity matrix. ]
+    #lbl(<def:preliminaries-matrices-7>, definition[For a matrix $bold(A)$, matrix $bold(M)$ is its inverse iff $bold(A M) = bold(M A) = bold(I)$, where $bold(I)$ is the identity matrix. ])
     Observe that a matrix has an inverse only if it is a square matrix, meaning it has the same number of rows and columns. In fact, any square matrix with a non-zero determinant has an inverse.
     Furthermore, finding the solution to a system of linear equations is equivalent to finding the inverse of a matrix.
     Consider a system of linear equations regarding $n$ variables. If $bold(A)$ is an n-by-n square matrix representing the coefficients of the variables in each equation, $bold(X)$ a vector representing the solutions, and $bold(B)$ representing the vector of the constants on the right side of the equations, then we have $ bold(A X) = bold(B) ==> bold(A)^(-1) bold(A X) = bold(A)^(-1) bold(B) ==> bold(X) = bold(A)^(-1) bold(B) $
 
     Thus, how to find the inverse of a matrix becomes a natural question. Here, I claim, without proof, that if the adjunct matrix of a square matrix $bold(A)$ is obtained by taking the transpose of the co-factor of the minors of $bold(A)$, then $ bold(A)^(-1) = 1/(det(vb(A))) op("adj")(bold(A)). $
 
-#example[
+#lbl(<ex:preliminaries-matrices-1>, example[
   Consider the matrix
 
   $
@@ -190,4 +190,4 @@ Matrix algebra satisfies many properties for a nice algebraic structure.
   $
 
   Thus, a system described by $hat(bold(i))$ and $hat(bold(j))$ is mapped to a system of $hat(bold(j))$ and $-hat(bold(j))$. Therefore, $90^degree$ counterclockwise.
-]
+])

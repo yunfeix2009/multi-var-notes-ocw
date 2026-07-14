@@ -22,9 +22,9 @@ $
 
 In particular, $ dif A = r dif r dif theta. $
 
-#example[
+#lbl(<ex:integration-polar-coordinates-1>, example[
   (Practice Final Exam P18) Compute $ integral_0^oo e^(-x^2) dif x. $
-]
+])
 #solution[
   Let $I := integral_0^oo e^(-x^2) dif x$. Then, $ integral_0^oo integral_0^oo e^(-x^2) e^(-y^2) dif x dif y = I^2. $
 

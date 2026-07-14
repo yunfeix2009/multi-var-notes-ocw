@@ -7,17 +7,17 @@
 )
 Motivated by the one dimensional case, if $y = f(x)$, then $dif y = f'(x) dif x$. From this, an infinitesimal change in one variable is related to another. One obvious benefits of this is that the reverse direction becomes easy to obtain.
 
-#example[
-  If $y= sin^(-1) x$, find $(dif y)/(dif x)$.]
+#lbl(<ex:differentiation-differentials-1>, example[
+  If $y= sin^(-1) x$, find $(dif y)/(dif x)$.])
 
 #solution[
   Applying $sin$ on both sides, $x = sin y$, so $ dif x = cos y dif y ==> (dif y)/(dif x) = 1/(cos y) = 1/sqrt(1-x^2). $
 ]
 
 === Total Differentials
-#definition[
+#lbl(<def:differentiation-differentials-1>, definition[
   For a function $f(x, y, z), x, y, z in RR$, the total differential of $f$ is $ dif f & = f_x dif x + f_y dif y + f_z dif z & = pdv(f, x) dif x + pdv(f, y) dif y + pdv(f, z) dif z. $
-]
+])
 
 However, it is not entirely obvious what are differentials -- they are not numbers, matrices, vectors, and they have special rules of manipulations.
 

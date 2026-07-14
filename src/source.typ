@@ -1,10 +1,16 @@
 #let title = "Notes on Multivariable Calculus"
-#let course = "MIT OpenCourseWare 18.03"
+#let course = "MIT OpenCourseWare 18.02"
 #let authors = "Saint Even and Slipper King"
 #let date = "June 2026"
 #let abstract = [
-
   #quote[Change]
+  #context {
+    if target() == "paged" {
+      align(center)[#quote[Change!]]
+    } else {
+      html.elem("div", attrs: (style: "text-align: right;padding-bottom: 0.5rem"), [#quote[Change!]])
+    }
+  }
 
   For those who have just finished calculus and want to learn multivariable calculus without taking a formal class or working through a full textbook, but would rather read a lighter set of notes:
 
@@ -17,7 +23,7 @@
   For the best web viewing experience, we recommend using a Mozilla-based browser such as Firefox. This will be subject to change as browsers improve their MathML support.
 ]
 
-#let source-url = "https://github.com/yunfeix2009/diff-eq-notes-ocw"
+#let source-url = "https://github.com/yunfeix2009/multi-var-notes-ocw"
 
 #let web-cover(href) = {
   html.elem("section", attrs: (class: "cover"), {
@@ -40,15 +46,15 @@
   )
   #align(center)[
     #v(2cm)
-    #text(size: 24pt, weight: "bold")[Differential Equations]
+    #box[#text(size: 20pt, weight: "bold")[#title]]
 
-    #text(size: 13pt)[MIT OpenCourseWare 18.03, 18.009]
+    #text(size: 13pt)[#course]
 
-    #text(size: 13pt)[#smallcaps[Saint Even] and #smallcaps[Slipper King]]
+    #text(size: 13pt)[#smallcaps[#authors]]
 
-    #text(size: 11pt)[July 2026]
+    #text(size: 11pt)[#date]
 
-    `Source: https://github.com/yunfeix2009/diff-eq-notes-ocw`
+    #raw("Source: " + source-url)
   ]
 
   #block(inset: 10pt)[#abstract]

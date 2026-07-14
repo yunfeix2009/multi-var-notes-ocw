@@ -7,9 +7,9 @@
 )
 One of the most consequential applications of partial derivatives is in optimization problems involving multiple variables, ie. finding the max/min of a multi-variable function.
 
-#theorem[
+#lbl(<thm:differentiation-extremum-1>, theorem[
   At the local extremum of a differentiable two-variable function $f(x, y)$, $f_x = f_y = 0$. In other words, the tangent plane to $f$ at its local extremum is horizontal.
-]
+])
 
 Note: The global extremum may lie on the boundary or at infinity.
 
@@ -38,14 +38,14 @@ Then, we have $ f "has a" cases("local minimum" & "if" A C - B^2 > 0 and A>0, "l
 
   Therefore, for the inconclusive case of $f_(x x) f_(y y) - f_(x y)^2 = 0$, the situation of the critical point depends on higher derivatives.
 ]
-#remark[
+#lbl(<rem:differentiation-extremum-1>, remark[
   Here, we make a connection to the subject of linear algebra. More generally, with more than $2$ variables, define Hessian matrix $vb(H)$ such that $ vb(H)_(i j) = f_(x_i x_j). $ Fix critical point $vb(x)_0$, $vb(x)_0$ is a minimum iff $vb(H)$ is positive definite and maximum iff $vb(H)$ is "negative definite," meaning all eigenvalues negative. This is due to $ forall vb(x), vb(x)^top vb(A) vb(x) > 0 <==> vb(A) "is positive definite". $ The proof of this theorem could be seen in _Notes of Linear Algebra_ by _Saint Even et al._ subsection $8.2.2$ (may change due to versions), Positive Definite Matrices under Eigenvalues and Eigenvectors chapter.
 
   Particularly, the rather cumbersome conditions above translates neatly to signs of the eigenvalues of the Hessian matrix.
-]
-#example[
+])
+#lbl(<ex:differentiation-extremum-1>, example[
   Consider the function $f(x, y) = x+y + 1/(x y), x in R^+ and y in R^+$, find its extremum(s).
-]
+])
 #solution[
   We proceed to find its critical points: $ cases(pdv(f, x) = 1 - 1/y 1/x^2 = 0, pdv(f, y) = 1 - 1/x 1/y^2 = 0) ==> cases(x^2 = y, y^2 = x) ==> (x, y) = (1, 1). $
   To determine the status of this critical point, we use the second derivative test. $ cases(A = f_(x x) = 2/ y 1/x^3, B = f(x y) = 1/x^2 1/y^2, C = f(y y) = 2/x 1/y^3). $ The criterion $ A C - B^2 = 4/(x^4 y^4) >> 0 and f_(x x) >>0. $

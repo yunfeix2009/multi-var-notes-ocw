@@ -16,9 +16,9 @@ Thus, $nabla f perp vu(u)$. But $nabla g perp vu(u)$ since $vu(u)$ is tangent to
 
 Therefore, the key observation here is that at extremum, the level curve of $f$ is tangent to $g$. In other words, their normal vectors are parallel. Expressed in terms of gradient, $ nabla f = lambda nabla g, lambda in RR without 0. $ Upon solving this equation along with the constraint equation of $g = c$, extrema are obtained.
 
-#example[
+#lbl(<ex:differentiation-lagrange-multipliers-1>, example[
   Find the point(s) on the hyperbola $x y = 1$ that is closest to the origin.
-]
+])
 #solution[
   Notice the quantity we are minimizing is the distance to the origin. For a certain point $(x_0, y_0)$, its distance to the origin is $sqrt(x_0^2 + y_0^2)$. Minimizing which is equivalent to minimizing $f(x, y) = x^2 + y^2$. Then, for our constraint equation, we let $g(x, y) := x y$, then $g(x, y) = 1$.
 
@@ -39,9 +39,9 @@ Therefore, the key observation here is that at extremum, the level curve of $f$ 
   Overall, the closest points are $(1, 1)$ and $(-1, -1)$, both with distance to the origin $1$.
 ]
 
-#remark[
+#lbl(<rem:differentiation-lagrange-multipliers-1>, remark[
   Literally, lagrange multiplier specifically refers to the "$lambda$," which "multiplies" according to Denis Auroux, lecturer of the $10.02$. Also, he interestingly noted that $lambda$ was likely selected to pay tribute to $l$agrange.
-]
+])
 
 
 However, there is one significant drawback of the method of lagrange multipliers. It is not apparent from the methods whether the found extremum is a minimum or maximum. Even worse, the second derivative test does not apply here as we are only concerned about a specific direction of $g = c$.
@@ -49,9 +49,9 @@ However, there is one significant drawback of the method of lagrange multipliers
 Thus, one quite manual way to verify is to directly compare the value obtained by the method of lagrange multipliers and values on the neighborhood of the found point.
 
 Now we examine a relatively more involved example.
-#example[
+#lbl(<ex:differentiation-lagrange-multipliers-2>, example[
   Fix a triangle on the x-y plane, find the minimum surface area with a given volume $V$ of a tetrahedron with the base as the given triangle.
-]
+])
 
 #solution[
   My first intuition was to model the situation entirely with vectors: $v_1, v_2, v_3$ for the given triangle and $v_4$ for the moving apex. Then noticed that the height is fixed. I modeled with the targeting surface areas with magnitude of cross products. In order to simplify the surface area function $f$, I used the lagrange identity for vectors (see @thm:lagrange-identity). Since $ vb(v_4) dot nabla f = dv(f, vb(v_4)), nabla f = dv(f, vb(v_4))/vb(v_4). $ However, it is here that I looked at the first part of the solution and realized that I took on a circuitous route.

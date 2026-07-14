@@ -98,7 +98,7 @@ $
   y = x^2/a^2
 $
 
-#remark[
+#lbl(<rem:appendices-appendix-2-quadratic-surfaces-1>, remark[
   Every quadratic surface is the zero set of a polynomial of degree
   two in the variables $x$, $y$, and $z$.
-]
+])

@@ -10,27 +10,27 @@ Kepler's laws say that planets move in ellipses, that the radius vector from the
 Sun sweeps out equal areas in equal times, and that the orbital period is tied
 to the size of the orbit.
 
-#definition[
+#lbl(<def:appendices-appendix-1-kepler-laws-1>, definition[
   *Kepler's first law.* A planet moves in an ellipse with the Sun at one focus.
-]
+])
 
-#definition[
+#lbl(<def:appendices-appendix-1-kepler-laws-2>, definition[
   *Kepler's second law.* If $A(t)$ denotes the area swept out by the radius
   vector from the Sun to the planet, then
   $
     A'(t)
   $
   is constant.
-]
+])
 
-#definition[
+#lbl(<def:appendices-appendix-1-kepler-laws-3>, definition[
   *Kepler's third law.* For planets orbiting the same Sun,
   $
     T^2 = k a^3,
   $
   where $T$ is the orbital period, $a$ is the semimajor axis of the orbit, and
   $k$ is the same constant for every planet orbiting that Sun.
-]
+])
 
 If an ellipse has semimajor axis $a$ and eccentricity $e$, and if polar
 coordinates are measured from a focus, then its equation can be written as
@@ -50,7 +50,7 @@ $
 Therefore a planet moves faster when it is closer to the Sun and slower when it
 is farther away.
 
-#remark[
+#lbl(<rem:appendices-appendix-1-kepler-laws-1>, remark[
   A centered parametrization of the ellipse is
   $
     x(t) = a cos t, quad y(t) = b sin t.
@@ -58,4 +58,4 @@ is farther away.
   To model a planetary orbit with the Sun at a focus, one shifts the origin from
   the center of the ellipse to the focus and then uses the focus-based polar
   equation above.
-]
+])

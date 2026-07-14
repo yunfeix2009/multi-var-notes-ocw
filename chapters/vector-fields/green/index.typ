@@ -1,16 +1,20 @@
-#import "../../../lib.typ":*
-== Green's Theorem 
+#import "/lib.typ": *
+
+#show: docs-subchapter.with(
+  title: "Green's Theorem",
+  route: "green",
+)
 
 
 To find the work along a closed curve, if the force field is not conservative, Green's Theorem is an alternative for direct computation. Rather than evaluating a line integral, Green's Theorem brings up the dimension by one and converts it to a double integral that is sometimes easier to evaluate. 
 
-#theorem[
+#lbl(<thm:green>, theorem[
   Green's Theorem (in tangential form) states that, for a closed, counterclockwise curve $c$ that encloses a region $R$, fix a vector field $vb(F) = (M, N)$ that is defined and is differentiable on $R$, then the work $ integral.cont_c vb(F) dot vb(r) = integral.double_R op(bold("curl")) (vb(F)) dif A = integral.double_R . $
   In other words, $ integral.cont_c M dif x + N dif y = integral.double_R N_x - M_y dif A. $
-]<thm:green>
-#remark[
+])
+#lbl(<rem:vector-fields-green-1>, remark[
   The fact that $c$ is taken as positive when it is counterclockwise comes from the convention that makes curl positive when it is counterclockwise. Or explicitly, that curl is defined as $N_x - M_y$, not the other way around. 
-]
+])
 #proof[
   Observe that it suffices to show the case where $N =0$, or $ integral.cont_c M dif x = integral.double_R -M_y dif A $ as $vb(F) = (M, N) = (M, 0) + (0, N)$, and by symmetry if Green's Theorem holds for $x$, then it holds for $y$, thus any $N$. 
 
@@ -32,9 +36,9 @@ To find the work along a closed curve, if the force field is not conservative, G
 
   Thus, we are done. 
   ]
-#example[
+#lbl(<ex:vector-fields-green-1>, example[
   Let $c$ denote the curve that is a unit circle centered at $(2, 0)$, counterclockwise. Compute $ integral.cont_c y e^(-x ) dif x + (1/2 x^2 - e^(-x))dif y. $
-]
+])
 
 #solution[Without Green's Theorem, one may still compute this line integral with the following substitution of $ cases(x= 2 + cos theta , y = sin theta) ==> cases(dif x = - sin theta dif theta, dif y = cos theta dif theta). $ Then evaluate the integral from $theta = 0$ to $theta = 2 pi$. 
 

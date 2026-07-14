@@ -4,6 +4,7 @@
 #import "@preview/cetz-plot:0.1.4" as cetz-plot
 #import "@preview/physica:0.9.8": *
 #import "@preview/physica:0.9.8": va as Va, vb as Vb, vu as Vu
+#import "@preview/meander:0.4.3": reflow, placed, container, content
 #import "@preview/fancy-tiling:1.0.0": *
 #import "@preview/mannot:0.3.3"
 #import "@preview/fletcher:0.5.8"

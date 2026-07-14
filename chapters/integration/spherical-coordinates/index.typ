@@ -5,15 +5,15 @@
   title: "Spherical Coordinates and Surface Area",
   route: "spherical",
 )
-#definition[
+#lbl(<def:integration-spherical-coordinates-1>, definition[
   Spherical coordinates is a way of representing a point in $RR^3$. Specifically, the distance from the point to the origin is $rho in [0, oo)$ and the angle from angle downwards from the $+z$-axis, $Phi in [0, pi]$, and $theta$ the angle from $+x$-axis towards $+y$-axis, $theta in [0, 2 pi]$.
-]
+])
 
 Another way to think about spherical coordinates is to imagine that it is applying $r-theta$ on the $r-z$ plane. Formally, $ cases(z = rho cos Phi, r = rho sin Phi). $ Thus, $ cases(x = r sin theta = rho sin Phi sin theta, y = r cos theta = rho sin Phi cos theta, z = z). $
 
-#example[
+#lbl(<ex:integration-spherical-coordinates-1>, example[
   $rho = 1$ is the unit sphere centered at the origin; $Phi = pi/4$ is a cone.
-]
+])
 
 Being in the integration section, we are interested in how $dif V$ is related to $dif rho dif theta dif Phi$.
 
@@ -23,9 +23,9 @@ With Denis's diagram,
 ]
 easy to see that, with a small change in $rho, theta$, and $Phi$, the change in volume is a "rectangular" piece of a thin spherical shell. The thickness is $dif rho$. The height is $rho dif Phi$. The length is $rho sin Phi dif theta$. Thus, $ dif V = rho^2 sin Phi dif rho dif Phi dif theta. $
 
-#example[
+#lbl(<ex:integration-spherical-coordinates-2>, example[
   Find the volume of the portion of the unit sphere centered at the origin that lies above the plane $z = 1/sqrt(2)$.
-]
+])
 #solution[
   Of course, if we were to use triple integral, which we will, any coordinate system should do the job; however, spherical coordinates is arguably the simplest among them all.
 
@@ -54,15 +54,15 @@ $
         & = G m integral_R delta cos Phi sin Phi dif V
 $
 
-#theorem[
+#lbl(<thm:integration-spherical-coordinates-1>, theorem[
   (newton) The gravitational attraction from a sphere with uniform density (although as long as its density only depends on the radial component also suffices) is equivalent to that of a point mass placed at the center of the sphere.
-]
+])
 
 This fact is a direct consequence of the cancellation of $rho$ from the expression. The deeper reason of this is the fact that the inverse square of the decay of gravitational force cancels the square growth of the surface area.
 
-#example[
+#lbl(<ex:integration-spherical-coordinates-3>, example[
   (Practice Final P12) A solid hemisphere of radius $1$ has its lower flat base on the $x y$-plane and center at the origin. Its density function is $delta = z$. Find the force of gravitational attraction it exerts on a unit mass at the origin.
-]
+])
 #solution[
   For a small enough volume $dif V$, the force $ vb(F)_g &= G m delta vb(r)/norm(r)^3 dif V
   \ &= G m delta ((rho sin Phi cos theta, rho sin Phi sin theta, rho cos Phi))/rho^3 rho^2 sin Phi dif rho dif Phi dif theta

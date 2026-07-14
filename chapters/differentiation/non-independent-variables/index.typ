@@ -18,23 +18,23 @@ Applying differential gives $ dif g = g_x dif x + g_y dif y + g_z dif z = 0. $
 Thus, $ dif z = - g_x/g_z dif x - g_y/g_z dif y ==> cases(pdv(z, x) = - g_x/g_z, pdv(z, y) = - g_y/g_z). $
 
 Here, we have an important potential confusion to clarify, which would be apparent in the following example.
-#example[
+#lbl(<ex:differentiation-non-independent-variables-1>, example[
   Let $f(x, y) := x+y, x = u and y = u + v$, find $pdv(f, x)$ and $pdv(f, u)$.
 
-]
+])
 #solution[
   $pdv(f, x) = 1$, $f(u, v) = 2u + v ==> pdv(f, u) = 2$
 ]
-#remark[
+#lbl(<rem:differentiation-non-independent-variables-1>, remark[
   From this example, we seem to have a contradiction that x = u but $pdv(f, x) != pdv(f, u)$. This is a result of different assumptions when we are taking each partial derivative. When doing $pdv(f, x)$, we assumed $dif y = 0$; when doing $pdv(f, u)$, we assumed $dif v = 0$. But fixing $y$ and fixing $v$ are different, that's why $pdv(f, x) != pdv(f, u)$. To avoid this kind of confusion, we must be explicit what we are keeping constant, and convention tells us to put it as a subscript, as $(pdv(f, x))_y$ represents the partial derivative of $f$ wrt $x$ *holding* $y$ as fixed.
-]
+])
 
 
 To illustrate how to find the partial derivative while holding certain variable constant, we present the following example with two systematic methods.
 
-#example[
+#lbl(<ex:differentiation-non-independent-variables-2>, example[
   For a right triangle with one angle $theta$, hypotenuse $b$, adjacent leg $a$, and area $A$. Find $(pdv(A, theta))_a$.
-]
+])
 #solution[
   (method 1: differential) The constraint is $a = b cos theta$. Since we hold $a$ as fixed, $ dif a = -sin theta b dif theta + cos theta dif b = 0 ==> dif b = b tan theta dif theta. $
 

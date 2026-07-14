@@ -1,19 +1,23 @@
 #import "/lib.typ": *
-== Flux
+
+#show: docs-subchapter.with(
+  title: "Flux",
+  route: "flux",
+)
 
 We first examine flux in two dimensions, namely in the $x-y$ plane.
-#definition[
+#lbl(<def:vector-fields-flux-1>, definition[
   For any vector field $vb(F)$ and plane curve $c$, if $vu(n)$ is the normal vector wrt $c$ (by convention, the one that is pointing to the right of a point moving along $c$), the flux of $c$ wrt $vb(F)$ is $ integral.cont_c vb(F) dot vu(n) dif s. $
-]
+])
 
 As a comparison to work, $ W = integral.cont_c vb(F) dot dif vb(r) = integral.cont_c vb(F) dot vu(T) dif s, $ where $vu(T)$ is the tangential direction along $c$. However, flux is the $vu(T)$ is replaced with $vu(n)$.
 
 Like how work is interpreted physically where $vb(F)$ is a force field, flux is often interpreted with $vb(F)$ as a velocity field for w fluid. Then, flux represents how much of that fluid is flowing in or out of the membrane modeled with the curve $c$. Conventionally, what flows from the left to right of $c$ is positive and vice versa.
 
-#example[
+#lbl(<emp:fluxOfCircle>, example[
   Let $c$ be a circle centered at the origin with radius $a$, counterclockwise and $F := x vu(i) + y vu(j)$.
   Find the flux of $c$ wrt $F$.
-]<emp:fluxOfCircle>
+])
 #solution[
   With the convention of positive to the right, since $c$ is counterclockwise, outward flux is taken to be positive.
   $
@@ -33,13 +37,13 @@ In general, without geometric symmetries, we compute flux in its component form.
 
 Similar to how Green's Theorem provides a double integral based method to compute work, there is an analogous Green's Theorem that converts the computation for flux into the evaluation of a double integral.
 
-#definition[
+#lbl(<def:vector-fields-flux-2>, definition[
   Let the divergence of a vector field $vb(F) = (P, Q)$ be $ op("div") (vb(F)) = P_x + Q_y. $
-]
+])
 
-#theorem[
+#lbl(<thm:vector-fields-flux-1>, theorem[
   Green's Theorem in normal form states that for a closed curve $c$ enclosing region $R$ then for vector field $vb(F)$ that is defined and is differentiable on $R$, $ integral.cont_c vb(F) dot vu(n) dif s = integral.double_R op("div") (vb(F)) dif A. $
-]
+])
 #proof[
   The proof here assumes Green's Theorem in tangential form.
 
@@ -58,9 +62,9 @@ Here we present an example of using Green's Theorem to find the flux by providin
   $ op("div") vb(F) = pdv(F, P) + pdv(F, Q) = pdv(x, x) + pdv(y, y) = 1 + 1 = 2. $
   So, $ integral.cont_c vb(F) dot vu(n) dif s = integral.double_R 2 dif A = 2 op("area") dif A = 2 pi a^2. $
 ]
-#remark[
+#lbl(<rem:vector-fields-flux-1>, remark[
   With this method, an important insight is obtained: the flux does _not_ depend on the placement of the circle on the plane -- it will be 2 pi a^2 regardless.
-]
+])
 
 In fact, similar to how curl roughly measure how much a field is "rotating" at a certain point, divergence roughly measure how much the flow is expanding at a certain point.
 
@@ -69,17 +73,17 @@ In fact, similar to how curl roughly measure how much a field is "rotating" at a
 From now on, we will consider flux in $RR^3$.
 
 Rather than considering how much liquid is flowing "through" a curve, we consider how much liquid a flowing through a surface.
-#definition[
+#lbl(<def:vector-fields-flux-3>, definition[
   Formally, for a vector field $vb(F)$ and surface $S$, let $vu(n)$ represent the unit normal vector wrt $S$ at a certain point, the flux of $vb(F)$ is $ integral.surf_S vb(F) dot vu(n) dif S. $
-]
+])
 
 There is one thing that must be taken care of. In 2D flux, the convention deems the normal to the right of a moving point on the curve as positive; however, on a surface, it must be stated explicitly which of the two normal vectors is taken as positive, which is termed "orientation" of the surface. Usually, the direction pointing out of the surface is taken as positive.
 
 As a notation, $dif (vb(S)) = vu(n) dot vb(S)$.
 
-#example[
+#lbl(<ex:vector-fields-flux-2>, example[
   Fix vector field $vb(F) = (x, y, z)$, find the flux through the unit sphere centered at the origin.
-]
+])
 #solution[
   For a point $(x_0, y_0, z_0)$ on the unit sphere, $vu(n) = (x_0, y_0, z_0)$. Thus, let $S$ be the surface of the unit sphere, the flux is
   $
@@ -91,9 +95,9 @@ As a notation, $dif (vb(S)) = vu(n) dot vb(S)$.
   $
 ]
 
-#example[
+#lbl(<emp:motivatingDivergence>, example[
   Let $S$ be a unit sphere of radius $a$ centered as the origin and $R$ be its interior. Fix the vector field $vb(H) = z vu(k)$, find the flux of $vb(H)$ through S.
-]<emp:motivatingDivergence>
+])
 
 #solution[
   Flux is
@@ -111,11 +115,11 @@ As a notation, $dif (vb(S)) = vu(n) dot vb(S)$.
                                                                 & = 4/3 pi a^3
   $
 ]
-#remark[
+#lbl(<rem:vector-fields-flux-2>, remark[
   Be careful not to assume $dif S = dif Phi dif theta$.
 
   Also, notice that the answer is indeed the surface area of the sphere, we will see why exactly it must be with divergence theorem (#text(red)[trust imma insert label here later]).
-]
+])
 surface integral
 $
   vu(n) dot Delta S &= (((x+ Delta x), y, f(x+Delta x, y) \
@@ -132,9 +136,9 @@ $
   vu(n) dot dif S & = \
                   & = plus.minus (-f_x, f_y, 1) dif x dif y
 $
-#example[
+#lbl(<ex:vector-fields-flux-4>, example[
   Flux of $vb(F) = z vu(k)$ through the portion of $z = x^2 + y^2$ that lies above the unit disc.
-]
+])
 #solution[
   Flux is $ integral.double_S vb(F) dot dif vb(S) & =
                                           integral.double_DD z vu(k) dot (-2x, -2y, 1) dif x dif y \
@@ -159,9 +163,9 @@ Thus, $ vu(n) dif S = vu(n) dif A / cos alpha = vu(n)/(vu(n) dot vu(k)) dif A, $
 Note that the $vu(n)$ cannot be canceled here, as the denominator is a scalar.
 
 To verify this method, we will use it to show the formula we had when $z$ is explicit in terms of $x$ and $y$.
-#example[
+#lbl(<ex:vector-fields-flux-5>, example[
   Find $dif vb(S)$ given $ z- f(x, y) = 0. $
-]
+])
 #solution[
   Let $g(x, y, z) = z - f(x, y)$, then
   $
@@ -180,11 +184,11 @@ First, we looks at what is divergence.
 
 
 Similar to $op("curl") vb(F) = curl vb(F)$, if $f(x, y, z) = (P, Q, R)$, then $ div f = (pdv(P, x), pdv(Q, y), pdv(R, z)) = op("div") f. $
-#theorem[
+#lbl(<thm:vector-fields-flux-2>, theorem[
   The Divergence Theorem (sometimes referred to as the Gauss-Green Theorem) states that, for a simply connected, bounded region $D$, with surface $S$ and a function defined and differentiable on it, $vb(F)$, then
   $ integral.surf_S vb(F) dot dif vb(S) = integral.triple_D op("div") vb(F) dif V, $
   where $op("div") (P vu(i) + Q vu(j) + R vu(k)) = P_x + Q_y + R_k.$
-]
+])
 #proof[
   Like how the Divergence Theorem is a generalization of the two-variable Green's Theorem in normal form, our proof's shall follow the same outline. First observe that it suffices to show one component, here we pick $z$, or $ integral.surf_S R dot dif vb(S) & = integral.triple_D nabla dot R dif V \
                                   & = integral.triple_D R_z dif V. $
@@ -202,9 +206,9 @@ Similar to $op("curl") vb(F) = curl vb(F)$, if $f(x, y, z) = (P, Q, R)$, then $ 
   \ &= integral.triple_D R_z dif V. #qedhere $
 
 ]
-#remark[
+#lbl(<rem:vector-fields-flux-3>, remark[
   In general, in order to apply Divergence to a region that is not simply connected, we decompose the region into simply connected regions.
-]
+])
 
 Now, we explain the previous suspicious-looking $4/3 pi a^3$, see <emp:motivatingDivergence>, with Divergence Theorem.
 #solution[
@@ -216,12 +220,12 @@ Now, we explain the previous suspicious-looking $4/3 pi a^3$, see <emp:motivatin
   $
 ]
 
-#example[
+#lbl(<ex:vector-fields-flux-6>, example[
   (Practice Final P15, 16) Let $S$ be the closed surface whose bottom face $B$ is the $DD$ (unit disc) in the $x y$-plane and whose
 upper surface is the paraboloid $z = 1-x^2 - y^2$ and $z >=0$. 
 (a) Find the flux of $vb(F) = x vu(i) + y vu(j) + z vu(k)$ across U by using the divergence theorem.
 (b) )Using the data of the preceding problem, calculate the flux of $F$ across $U$ directly, by setting up the surface integral for the flux and evaluating the resulting double integral in the xy-plane.
-]
+])
 #solution[
   (a) The flux is $ integral.surf_S vb(F) dot dif vb(S) + integral.surf_B vb(F) dot dif vb(S) &= integral.triple_V div vb(F) dif V
   \ &= integral.triple_V 3 dif V 
@@ -243,14 +247,14 @@ One consequential application of the Divergence Theorem is in solving diffusion 
 Some examples of diffusion are smoke in the air, dye in water, and heat (see @emp:heat).
 
 To model this, let the concentration at a given point $(x, y, z)$ and time $t$ be $u(x, y, z, t)$.
-#theorem[
+#lbl(<thm:vector-fields-flux-3>, theorem[
   If the starting concentration is described by $pdv(u, x), pdv(u, y), pdv(u, z)$, we aim to find how the concentration at a point changes through time, $pdv(u, t)$.
 
   $ pdv(u, t) = k (pdv(u, x, 2) + pdv(u, y, 2) + pdv(u, z, 2)). $
-]
-#definition[
+])
+#lbl(<def:vector-fields-flux-4>, definition[
   Define operator Laplacian (del, says Denis) $ Delta u = nabla^2 u = nabla dot nabla u, $
-]
+])
 then $ pdv(u, t) = k nabla^2 u. $
 
 #proof[

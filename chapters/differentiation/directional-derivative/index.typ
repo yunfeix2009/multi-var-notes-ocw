@@ -9,9 +9,9 @@ In gradient and partial derivatives, we considered the change of the function al
 
 In other words, fix a real function $z = w(x, y)$, and a two dimensional vector in the x-y plane $vu(u)$, which is parameterized by $s$. $dv(vb(r), s) = vu(u)$, what is $dv(w, s))$
 
-#definition[
+#lbl(<def:differentiation-directional-derivative-1>, definition[
   The directional derivative of the function $w$ wrt arc-length $s$ in the direction of $vu(u)$ is $ dv(w, s) |_vu(u). $
-]
+])
 
 In other words, $dv(w, s) |_vu(u)$ is the slope of the slice of graph by a vertical plane parallel to $vu(u)$.
 

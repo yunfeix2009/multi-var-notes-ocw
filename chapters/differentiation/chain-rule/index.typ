@@ -8,25 +8,25 @@
 Firstly, we justify the chain rule. We know that $ Delta f approx f_x Delta x + f_y Delta y + f_z Delta z ==> (Delta f)/(Delta t) approx f_x (Delta x)/(Delta t) + f_y (Delta y)/(Delta t) + f_z (Delta x)/(Delta t). $
 As $Delta t -> 0$, $(Delta f)/(Delta t) -> dv(f, t)$, $(Delta x)/(Delta t) -> dv(x, t)$, etc. At the limit of $Delta t -> 0$, we obtain $ dv(f, t) = f_x dv(x, t) + f_y dv(y, t) + dv(z, t). $
 
-#example[
+#lbl(<ex:differentiation-chain-rule-1>, example[
   Given $u(t)$ and $v(t)$. Show that $(u v)' = u' v + u v'$.
-]
+])
 #solution[
   Let $f(u, v) := u v$. Then with chain rule we have $ dv(f, t) = dv((u v), t) = f_u dv(u, t) + f_v dv(v, t) = v dv(u, t) + u dv(v, t). $
 ]
-#remark[
+#lbl(<rem:differentiation-chain-rule-1>, remark[
   Quotient rule could also be derived, either as a corollary of product rule with $u /v = u 1/v$, or with chain rule for multi-variable.
-]
+])
 
 Polar coordinates poses a motivating case for which $x$ and $y$ are also multi variable functions. Then, chain rule for $f(x, y)$ where $x(u, v)$ and $y(u, v)$ is $ dif f &= f_x dif x + f_y dif y \ &= f_x (x_u dif u + x_v dif v) + f_y (y_u dif u + y_v dif v) \ &= (f_x x_u + f_y y_u) dif u + (f_x x_v + f_y y_v) dif v \ &==> cases(pdv(f, u) = f_x x_u + f_y y_u = pdv(f, x) pdv(x, u) + pdv(f, y) pdv(y, u), pdv(f, v) = f_x x_v + f_y y_v = pdv(f, x) pdv(x, v) + pdv(f, y) pdv(y, v)). $
 
-#remark[
+#lbl(<rem:differentiation-chain-rule-2>, remark[
   It is tempting to cancel the cancel the $partial x$ and the $partial y$. However, these are partial differentials -- not total differential nor $dif$. In fact, $partial$ should remind us that partial differentials work differently compared to single differentials. $ partial != dif $
-]
+])
 
-#example[
+#lbl(<ex:differentiation-chain-rule-2>, example[
   Given $ cases(x:= r cos theta, y:= r sin theta), $ express $ nabla^2 = pdv(, x, 2) + pdv(, y, 2) $ in terms of $ pdv(, r), pdv(, theta), pdv(, r, 2), pdv(, theta, 2). $
-]
+])
 #solution[
   We have:
   $ pdv(theta, x) = pdv(tan^(-1) (y/x), x) = (-1/x^2)/(1+(y/x)^2) = -1/(x^2 + t^2) = -1/r^2, $
@@ -68,9 +68,9 @@ Polar coordinates poses a motivating case for which $x$ and $y$ are also multi v
     .
   $
 ]
-#remark[
+#lbl(<rem:differentiation-chain-rule-3>, remark[
   Notice in here, we abused the notation as if $pdv(a, b, 2) = pdv(, b) pdv(, b) a =(pdv(, b))^2 a$. However, if this abuse is taken further, treating $pdv(a, b, 2)$ as $pdv(a, b) dot pdv(a, b)$, it is not necessarily true, especially with the constants. If $pdv(a, b, 2)$ is _directly_ treated as multiplication, then the third equality will follow as: $ & =y^2/r^4 pdv(, theta, 2) + x^2/r^2 pdv(, r, 2) - (2x y)/r^3 pdv(theta, r) \
   & quad"" + x^2/r^4 pdv(, theta, 2) + y^2/r^2 pdv(, r, 2) + (2 x y)/r^3 pdv(, theta, r) \
   & = 1/r^2 pdv(, theta, 2) + pdv(, r, 2), $
   which misses the $1/r pdv(, r)$ term.
-]
+])

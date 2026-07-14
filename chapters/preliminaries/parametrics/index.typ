@@ -46,7 +46,7 @@ $
   Q(t) = (-1, 2, 2) + t(2, 1, -3).
 $
 
-#theorem[
+#lbl(<thm:preliminaries-parametrics-1>, theorem[
   The parametric equations of this line are
   $
     x(t) = -1 + 2t,
@@ -57,9 +57,9 @@ $
   $
     z(t) = 2 - 3t.
   $
-]
+])
 
-#remark[
+#lbl(<rem:preliminaries-parametrics-1>, remark[
   In general, if a line passes through a point $P_0 = (x_0, y_0, z_0)$ and has
   direction vector $vb(v) = (a, b, c)$, then a parametric equation for the line is
   $
@@ -79,13 +79,13 @@ $
 
   The constant terms determine a point on the line, while the coefficients of $t$
   determine its direction.
-]
+])
 
-#example[Cycloid][
+#lbl(<ex:preliminaries-parametrics-1>, example[Cycloid][
   A circle of radius $a$ rolls along the $x$-axis without slipping. Find a
   parametric equation for the path traced by a point on the rim of the circle.
   Describe the main geometric features of the resulting curve.
-]
+])
 
 #solution[
   Let $t$ be the angle through which the circle has rotated. Since the circle

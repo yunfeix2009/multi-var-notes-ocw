@@ -2,7 +2,7 @@
 
 #show: docs-chapter.with(
   title: "Integration",
-  route: "int",
+  route: "integration",
   description: "integration of multiple variables",
 
   children: [
