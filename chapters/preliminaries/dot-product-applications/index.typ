@@ -57,7 +57,27 @@
 + In Physics, when dealing with force, dot  product is often critical.
   #lbl(<ex:preliminaries-dot-product-applications-4>, example[
     #let boat-image = image("/assets/image.png", width: 100%)
-
+    #let diagram = canvas({
+      import cetz.draw: *
+      let pt = (1.5, 3)
+      line(pt, (pt, 200%, (0, 0)), name: "ls")
+      content("ls.0%", $l_s$, anchor: "west")
+      scope({
+        scale(y: -1)
+        line(pt, (pt, 200%, (0, 0)), name: "lb")
+        content("lb.100%", $l_B$, anchor: "east")
+      })
+      let int1 = (0, 4)
+      let int2 = (3, 0)
+      line(int1, (int1, 200%, (0, 0)), stroke: (dash: "dashed"), name: "y")
+      line(int2, (int2, 200%, (0, 0)), stroke: (dash: "dashed"), name: "x")
+      line((0, 0), (2, 0), mark: (end: ">>"), name: "w")
+      content(int1, $y$, anchor: "west")
+      content(int2, $x$, anchor: "south")
+      content((0, 0), math-rect($beta$), anchor: "south", padding: 10pt)
+      content((0, 0), math-rect($alpha$), anchor: -150deg, padding: 10pt)
+      content("w.50%", $vb(w) = a vu(i)$, anchor: 140deg, padding: 4pt)
+    })
     #context if state("render-mode").get() == "web" [
       #html.elem("div", attrs: (class: "boat-reflow"), {
         html.elem("div", attrs: (class: "boat-reflow-text"), [
@@ -75,32 +95,12 @@
           is perpendicular to the sail $(0 <= alpha < pi/2)$, and the line $l_B$ lies
           along the boat's axis $(0 <= beta < pi/2)$.
         ])
-        figure-wrapper(figure(canvas({
-          import cetz.draw: *
-          let pt = (1.5, 3)
-          line(pt, (pt, 200%, (0, 0)), name: "ls")
-          content("ls.0%", $l_s$, anchor: "west")
-          scope({
-            scale(y: -1)
-            line(pt, (pt, 200%, (0, 0)), name: "lb")
-          content("lb.100%", $l_B$, anchor: "east")
-          })
-          let int1 = (0, 4)
-          let int2 = (3, 0)
-          line(int1, (int1, 200%, (0, 0)), stroke: (dash: "dashed"), name: "y")
-          line(int2, (int2, 200%, (0, 0)), stroke: (dash: "dashed"), name: "x")
-          line((0, 0), (2, 0), mark: (end: ">>"), name: "w")
-          content(int1, $y$, anchor: "west")
-          content(int2, $x$, anchor: "south")
-          content((0,0), math-rect($beta$), anchor: "south", padding: 10pt)
-          content((0,0), math-rect($alpha$), anchor: -150deg, padding: 10pt)
-          content("w.50%", $vb(w) = a vu(i)$, anchor: 140deg, padding: 4pt)
-        })))
+        figure-wrapper(figure(diagram))
       })
     ] else [
-      #let image1 = image("/assets/image.png", width: 53%)
+      // #let image1 = image("/assets/image.png", width: 53%)
       #meander.reflow({
-        meander.placed(horizon + right, dy: -6.7cm, dx: 3%, image1)
+        meander.placed(horizon + right, dy: -6.7cm, dx: 3%, diagram)
 
         meander.container()
         meander.content[

@@ -1,4 +1,5 @@
-#let title = "Notes on Multivariable Calculus"
+#let title = "Notes on\n Multivariable Calculus"
+
 #let authors = ("Saint Even", "Slipper King")
 #let date = "June 2026"
 #let source-url = "https://github.com/yunfeix2009/multi-var-notes-ocw"
