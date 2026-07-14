@@ -19,41 +19,34 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
-      - uses: actions/checkout@v5
-
-      - name: Install Typst
-        uses: typst-community/setup-typst@v5
-        with:
-          typst-version: "0.15.0"
-          cache-dependency-path: typst-packages.typ
+      - uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v6
+        uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
       - name: Install Python dependencies
-        run: pip install beautifulsoup4
-
-      - name: Verify Typst packages
         run: |
-          typst --version
-          typst info
-          typst compile --root . typst-packages.typ /tmp/typst-packages.pdf
+          pip install numpy shapely beautifulsoup4
 
-      - name: Build site bundle
+      - name: Run preprocessing script
+        run: python scripts/build.py
+
+      - name: Build Document
         run: |
-          rm -rf dist
-          typst compile --root . --features bundle,html --format bundle main.typ dist
+          Remove-Item -Recurse -Force web/dist -ErrorAction SilentlyContinue
+          Remove-Item -Recurse -Force dist -ErrorAction SilentlyContinue
+          .\typst.exe compile --features bundle,html --format bundle --package-path packages main.typ dist
 
-      - name: Build search index
+      - name: Build Search Index
         run: python build-search-index.py
 
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v3
         with:
           path: dist
 
