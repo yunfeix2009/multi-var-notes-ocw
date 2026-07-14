@@ -18,8 +18,10 @@ Another way to think about spherical coordinates is to imagine that it is applyi
 Being in the integration section, we are interested in how $dif V$ is related to $dif rho dif theta dif Phi$.
 
 With Denis's diagram,
-#align(center)[
-  #image("/assets/image-2.png")
+#figure-wrapper[
+  #figure(
+    image("/assets/image-2.png"),
+  )
 ]
 easy to see that, with a small change in $rho, theta$, and $Phi$, the change in volume is a "rectangular" piece of a thin spherical shell. The thickness is $dif rho$. The height is $rho dif Phi$. The length is $rho sin Phi dif theta$. Thus, $ dif V = rho^2 sin Phi dif rho dif Phi dif theta. $
 

@@ -2,7 +2,7 @@
 #import "/lib.typ": *
 
 #show: docs-subchapter.with(
-  title: "Directional Derivative ",
+  title: "Directional Derivative",
   route: "directional-derivative",
 )
 In gradient and partial derivatives, we considered the change of the function along the direction of $x$, $y$, $z$, etc. Now, we consider the change in the function along a customized, non-coordinate direction.

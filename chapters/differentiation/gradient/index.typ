@@ -3,7 +3,7 @@
 
 #show: docs-subchapter.with(
   title: "Gradient",
-  route: "grad",
+  route: "gradient",
 )
 
 #lbl(<def:differentiation-gradient-1>, definition[

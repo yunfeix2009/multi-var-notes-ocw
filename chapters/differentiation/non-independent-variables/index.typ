@@ -3,7 +3,7 @@
 
 #show: docs-subchapter.with(
   title: "Non-independent Variables",
-  route: "dependent-var",
+  route: "non-independent-variables",
 )
 In the lagrange multipliers section, we discussed the min/max problem given one constraint of dependence of variables. Here, we consider more than the extrema, for example, partial derivatives.
 

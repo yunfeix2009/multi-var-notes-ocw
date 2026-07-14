@@ -56,10 +56,9 @@
   ]
 + In Physics, when dealing with force, dot  product is often critical.
   #lbl(<ex:preliminaries-dot-product-applications-4>, example[
-    #let is-html = sys.inputs.at("html", default: "false") == "true"
     #let boat-image = image("/assets/image.png", width: 100%)
 
-    #if is-html [
+    #context if state("render-mode").get() == "web" [
       #html.elem("div", attrs: (class: "boat-reflow"), {
         html.elem("div", attrs: (class: "boat-reflow-text"), [
           Background: By carefully positioning the sail the boat can be made to sail
@@ -82,11 +81,11 @@
       })
     ] else [
       #let image1 = image("/assets/image.png", width: 53%)
-      #reflow({
-        placed(horizon + right, dy: -6.7cm, dx: 3%, image1)
+      #meander.reflow({
+        meander.placed(horizon + right, dy: -6.7cm, dx: 3%, image1)
 
-        container()
-        content[
+        meander.container()
+        meander.content[
           #set par(justify: true)
           Background: By carefully positioning the
           sail the boat can be made to sail into the wind – this process is called _tacking_.
