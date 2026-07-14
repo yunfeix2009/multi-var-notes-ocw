@@ -33,9 +33,6 @@ jobs:
         run: |
           pip install numpy shapely beautifulsoup4
 
-      - name: Run preprocessing script
-        run: python scripts/build.py
-
       - name: Build Document
         run: |
           Remove-Item -Recurse -Force web/dist -ErrorAction SilentlyContinue
