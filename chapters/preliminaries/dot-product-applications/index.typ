@@ -1,15 +1,12 @@
+
 #import "/lib.typ": *
 
-// #import "../../differentiation/gradient/index.typ" : *
-// #import "../dot-product/index.typ": *
-// #import "../../differentiation/geometric-lens/index.typ": *
-
-== Dot Product Applications
-
+#show: docs-subchapter.with(
+  title: "Dot Product Applications",
+  route: "dot-app",
+)
 + One of the most frequent applications of dot product is converting between lengths and angles and coordinates.
-  // #theorem[
-  //   $"game" = "lost"$
-  // ]
+
   #example[
     Consider points $P, Q, R in RR^3: P = (1, 0, 0), R = (0, 0, 2), Q = (0, 1, 0).$ Find $angle R P Q.$
 
@@ -126,6 +123,6 @@
   ]
 
 #remark[
-  In fact, the component of the force against the wind (in the $-vu(i)$ direction) is $vb(F)(alpha, beta) = a cos alpha cos beta (-cos(alpha + beta))$. Then, one could show that the $vb(F)$ is maximized when $alpha = beta = pi/3$ and $vb(F) = a/8$ in that case. 
+  In fact, the component of the force against the wind (in the $-vu(i)$ direction) is $vb(F)(alpha, beta) = a cos alpha cos beta (-cos(alpha + beta))$. Then, one could show that the $vb(F)$ is maximized when $alpha = beta = pi/3$ and $vb(F) = a/8$ in that case.
 ]
 

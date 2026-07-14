@@ -1,34 +1,54 @@
-#import "/lib.typ": *
+// #import "/lib.typ": *
+
+#import "/src/components/index.typ": render-mode, route-folders, thm-counter, thm-state
+
+#set heading(numbering: none)
+#route-folders.update(())
+#thm-counter.thm-counters.update((:))
+#thm-state.thm-stored.update(())
+
+
+#include "cover.typ"
+#include "preface/index.typ"
+
+#context if render-mode.get() == "pdf" {
+  pagebreak()
+}
 #set heading(numbering: "1.1")
-#chapter-section("preliminaries")[
-  #include "preliminaries/index.typ"
-]
+#counter(heading).update(0)
+#include "preliminaries/index.typ"
 
-#if not _is-html {
-  std.pagebreak()
+
+#context if render-mode.get() == "pdf" {
+  pagebreak()
 }
-#chapter-section("differentiation")[
-  #include "differentiation/index.typ"
-]
+#include "differentiation/index.typ"
 
-#if not _is-html {
-  std.pagebreak()
+#context if render-mode.get() == "pdf" {
+  pagebreak()
 }
+#include "integration/index.typ"
 
-#chapter-section("integration")[
-  #include "integration/index.typ"
-]
-#if not _is-html {
-  std.pagebreak()
+#context if render-mode.get() == "pdf" {
+  pagebreak()
 }
 
-#chapter-section("vector-fields")[
-  #include "vector-fields/index.typ"
-]
-#if not _is-html {
-  std.pagebreak()
+#include "vector-fields/index.typ"
+#context if render-mode.get() == "pdf" {
+  pagebreak()
 }
-// appendix
+
+#set heading(numbering: "A.1")
+#counter(heading).update(0)
+#route-folders.update(("appendices",))
+#include "appendices/index.typ"
+
+#set heading(numbering: none)
+#route-folders.update(())
+#include "bibliography/index.typ"
+
+
+
 
 #set heading(numbering: "A.1")
 #counter(heading).update(0)

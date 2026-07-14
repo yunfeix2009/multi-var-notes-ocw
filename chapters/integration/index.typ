@@ -1,32 +1,19 @@
-#import "../../lib.typ":*
-= Integration
+#import "/lib.typ": *
 
-Here, we examine the concepts of integration for functions with more than one variables along with their applications. 
+#show: docs-chapter.with(
+  title: "Integration",
+  route: "int",
+  description: "integration of multiple variables",
 
-#chapter-section("double-integrals")[
-  #include "double-integrals/index.typ"
-]
+  children: [
+    #include "double-integrals/index.typ"
+    #include "polar-coordinates/index.typ"
+    #include "double-int-application/index.typ"
+    #include "change-of-variables/index.typ"
+    #include "line-integrals/index.typ"
+    #include "triple-integrals/index.typ"
+    #include "spherical-coordinates/index.typ"
+  ],
+)
 
-#chapter-section("polar-coordinates")[
-  #include "polar-coordinates/index.typ"
-]
-
-#chapter-section("double-int-application")[
-  #include "double-int-application/index.typ"
-]
-
-#chapter-section("change-of-variables")[
-  #include "change-of-variables/index.typ"
-]
-
-#chapter-section("line-integrals")[
-  #include "line-integrals/index.typ"
-]
-
-#chapter-section("triple-integrals")[
-  #include "triple-integrals/index.typ"
-]
-
-#chapter-section("spherical-coordinates")[
-  #include "spherical-coordinates/index.typ"
-]
+Here, we examine the concepts of integration for functions with more than one variables along with their applications.
