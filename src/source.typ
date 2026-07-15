@@ -4,22 +4,15 @@
 #let date = "June 2026"
 #let source-url = "https://github.com/yunfeix2009/multi-var-notes-ocw"
 #let abstract(render-mode) = [
-  #let _quote = quote[Change]
-  #let _credit = [--nmlgb]
+  #let _quote = quote[Change!]
 
   #if render-mode == "pdf" {
     align(center)[#_quote]
-    align(right)[#_credit]
   } else {
     html.elem("div", attrs: (style: "text-align: center;"), _quote)
     html.elem("div", attrs: (style: "text-align: right;padding-bottom: 0.5rem"), _credit)
   }
-
-  For those who have just finished calculus and want to learn multivariable calculus without taking a formal class or working through a full textbook, but would rather read a lighter set of notes:
-
-  This set of notes multivariable calculus intended to serve as the starting point of the study in the series of multivariable calculus, linear algebra, and differential equation -- three subjects I believe together make a strong foundation as the math prerequisite of .
-
-  Calculus of several variables. Vector algebra in 3-space, determinants, matrices. Vector-valued functions of one variable, space motion. Scalar functions of several variables: partial differentiation, gradient, optimization techniques. Double integrals and line integrals in the plane; exact differentials and conservative fields; Green's theorem and applications, triple integrals, line and surface integrals in space, Divergence theorem, Stokes' theorem; applications.
+  "Calculus of several variables. Vector algebra in 3-space, determinants, matrices. Vector-valued functions of one variable, space motion. Scalar functions of several variables: partial differentiation, gradient, optimization techniques. Double integrals and line integrals in the plane; exact differentials and conservative fields; Green's theorem and applications, triple integrals, line and surface integrals in space, Divergence theorem, Stokes' theorem; applications." @mit_registrar_course18_fall2026
 ]
 
 #let web-view-recommendation = [
