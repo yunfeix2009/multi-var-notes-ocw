@@ -10,7 +10,6 @@
     align(center)[#_quote]
   } else {
     html.elem("div", attrs: (style: "text-align: center;"), _quote)
-    html.elem("div", attrs: (style: "text-align: right;padding-bottom: 0.5rem"), _credit)
   }
   "Calculus of several variables. Vector algebra in 3-space, determinants, matrices. Vector-valued functions of one variable, space motion. Scalar functions of several variables: partial differentiation, gradient, optimization techniques. Double integrals and line integrals in the plane; exact differentials and conservative fields; Green's theorem and applications, triple integrals, line and surface integrals in space, Divergence theorem, Stokes' theorem; applications." @mit_registrar_course18_fall2026
 ]
