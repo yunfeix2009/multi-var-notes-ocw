@@ -9,7 +9,7 @@
 
 For those who have just finished calculus and want to learn multivariable calculus without taking a formal class or working through a full textbook, but would rather read a lighter set of notes:
 
-This set of notes is mainly based the class of 18.02, MIT OpenCourseWare @Auroux2007MultivariableCalculus. Specifically, lectures by Prof. Denis Auroux, recorded in 2007, and problems from its problem set. When the source of an example problem is not otherwise stated, it may be assumed to be from the problem sets of this course.
+This set of notes is based mainly on the class of 18.02, MIT OpenCourseWare @Auroux2007MultivariableCalculus. Specifically, lectures by Prof. Denis Auroux, recorded in 2007, and problems from its problem set. When the source of an example problem is not otherwise stated, it may be assumed to be from the problem sets of this course.
 
 Topics of study in this course, by virtue of MIT Registrar's Office, is as following. #quote[Calculus of several variables. Vector algebra in 3-space, determinants, matrices. Vector-valued functions of one variable, space motion. Scalar functions of several variables: partial differentiation, gradient, optimization techniques. Double integrals and line integrals in the plane; exact differentials and conservative fields; Green's theorem and applications, triple integrals, line and surface integrals in space, Divergence theorem, Stokes' theorem; applications. ] @mit_registrar_course18_fall2026
 
